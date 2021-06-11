@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, Route, useHistory } from "react-router-dom";
 import "../CSS/Signin.css";
+/**import { FaUser } from "react-icons/fa";**/
 import Signup from "./Signup";
 import boyVector from "../Images/boy_vector_signin.svg";
 
@@ -51,23 +52,27 @@ const Signin = () => {
   return (
     <div className="container">
       <div className="forms-container">
-        <div className="signin">
-          <h2 className="title">Sign in</h2>
-          <div className="input-field">
-            <input type="text" placeholder="Username" onChange={handleInput1} />
-          </div>
+        <div className="signin-signup">
+          <form action="#" class="sign-in-form">
+            <h2 className="title">Sign in</h2>
+            <div className="input-field">
+           
+              <input type="text" placeholder="USERNAME" onChange={handleInput1} />
+            </div>
 
-          <div className="input-field">
-            <input
-              type="password"
-              placeholder="Password"
-              onChange={handleInput2}
-            />
-          </div>
+            <div className="input-field">
+           
+              <input
+                type="password"
+                placeholder="PASSWARD"
+                onChange={handleInput2}
+              />
+            </div>
 
-          <button type="submit" className="dark_btn" onClick={signIn}>
-            Sign In
-          </button>
+            <button type="submit" className="dark_btn" onClick={signIn}>
+              Sign In
+            </button>
+          </form>
         </div>
       </div>
       <div className="panel-container">
