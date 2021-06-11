@@ -3,6 +3,12 @@ import { Link, Route, useHistory } from "react-router-dom";
 import "../CSS/Signin.css";
 import Signup from "./Signup";
 import boyVector from "../Images/boy_vector_signin.svg";
+import axios from "axios";
+
+const instance = axios.create({
+  withCredentials: true,
+  baseURL: "http://localhost:8000/api/",
+});
 
 const Signin = () => {
   const history = useHistory();
@@ -20,28 +26,29 @@ const Signin = () => {
     e.preventDefault();
     console.log(email);
     console.log(password);
-    fetch("http://localhost:8000/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
+
+    instance
+      .post("login", {
         email: email,
         password: password,
-      }),
-    }).then((resp) => {
-      console.log(resp.json());
-      // if(status == 200)
-    });
-    // fetch("http://localhost:8000/api/user").then((resp) =>
-    //   console.log(resp.json())
-    // );
-    // <Route></Route>
+      })
+      .then(function (response) {
+        console.log(response);
+        if (response.status === 200) {
+          instance.get("user").then((resp) => console.log(resp));
+        } else {
+          alert(response.detail);
+        }
+      });
+    // .catch(function (error) {
+    //   console.log(error);
+    //   alert(error);
     // });
-
-    // console.log(this.input.value);
-    // console.log("Password: ", e.password.value);
   };
+
+  // console.log(this.input.value);
+  // console.log("Password: ", e.password.value);
+
   const signUp = (e) => {
     e.preventDefault();
     <Link to="/signup">
