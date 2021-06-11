@@ -12,8 +12,12 @@ const instance = axios.create({
 });
 
 const Signin = () => {
+    const history = useHistory();
+
   const signUp = (e) => {
+  
     e.preventDefault();
+    history.push("/signup")
   };
 
   return (
@@ -25,8 +29,8 @@ const Signin = () => {
           <p>Create an account with us and get benefits of our system</p>
           <button
             className="light_btn"
-            onClick={() => {
-              signUp();
+            onClick={(e) => {
+              signUp(e);
             }}
           >
             Sign Up
