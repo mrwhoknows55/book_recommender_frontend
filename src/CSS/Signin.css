@@ -46,6 +46,9 @@ form {
   grid-row: 1 / 2;
 }
 
+form.sign-in-form {
+  z-index: 2;
+}
 .title {
   font-size: 2.2rem;
   color: #41519a;
