@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import EmailIcon from "@material-ui/icons/Email";
+import LockIcon from "@material-ui/icons/Lock";
 import { Link, Route, useHistory } from "react-router-dom";
 import "../CSS/Signin.css";
-/**import { FaUser } from "react-icons/fa";**/
-import Signup from "./Signup";
+// import Signup from "./Signup";
 import boyVector from "../Images/boy_vector_signin.svg";
 import axios from "axios";
 
@@ -14,9 +15,7 @@ const instance = axios.create({
 const Signin = () => {
   const signUp = (e) => {
     e.preventDefault();
-    <Link to="/signup">
-      <Signup />
-    </Link>;
+    <Link to="/signup">{/* <Signup /> */}</Link>;
   };
 
   return (
@@ -91,6 +90,7 @@ const SigninForm = () => {
         <form action="#" class="sign-in-form">
           <h2 className="title">Sign in</h2>
           <div className="input-field">
+            <EmailIcon className="icon" />
             <input
               type="text"
               placeholder="Email"
@@ -99,6 +99,7 @@ const SigninForm = () => {
           </div>
 
           <div className="input-field">
+            <LockIcon className="icon" />
             <input
               type="password"
               placeholder="Password"

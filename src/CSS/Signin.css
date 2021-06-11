@@ -61,14 +61,20 @@ form.sign-in-form {
 .input-field {
   max-width: 380px;
   width: 130%;
-  height: 40px;
+  height: 50%;
   background-color: whitesmoke;
   margin: 20px 0;
   border-radius: 55px;
   display: grid;
-  grid-template-columns: 95% 85%;
-  padding-left: 55px;
+  grid-template-columns: 20% 80%;
+  /* grid-template-columns: 95% 85%; */
+  padding: 2% 5%;
 }
+.icon {
+  color: #aaa;
+  padding: 4px;
+}
+
 .input-field input {
   background: none;
   outline: none;
@@ -80,6 +86,7 @@ form.sign-in-form {
 .input-field input::placeholder {
   font-weight: 500;
   color: #aaa;
+  margin-left: 2%;
 }
 .dark_btn {
   color: white;
@@ -167,4 +174,3 @@ p {
 /* .password__invalid{
 
 } */
-
