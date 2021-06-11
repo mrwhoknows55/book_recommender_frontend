@@ -57,14 +57,14 @@ const Signin = () => {
             <h2 className="title">Sign in</h2>
             <div className="input-field">
            
-              <input type="text" placeholder="USERNAME" onChange={handleInput1} />
+              <input type="text" placeholder="Email" onChange={handleInput1} />
             </div>
 
             <div className="input-field">
            
               <input
                 type="password"
-                placeholder="PASSWARD"
+                placeholder="Password"
                 onChange={handleInput2}
               />
             </div>
