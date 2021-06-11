@@ -10,13 +10,14 @@ const App = () => {
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/">
+          <Route path="/signin">
             <Signin />
           </Route>
-          {/* <Route path="/">
+
+          <Route path="/">
             <Header />
             <Home />
-          </Route> */}
+          </Route>
         </Switch>
       </div>
     </Router>
