@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from '../Components/Header';
-import Home from '../Components/Home';
-import Signin from '../Components/Signin';
+import Header from "../Components/Header";
+import Home from "../Components/Home";
+import Signin from "../Components/Signin";
 import "../CSS/App.css";
 
 const App = () => {
@@ -10,13 +10,13 @@ const App = () => {
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/signin">
+          <Route path="/">
             <Signin />
           </Route>
-          <Route path="/">
+          {/* <Route path="/">
             <Header />
             <Home />
-          </Route>
+          </Route> */}
         </Switch>
       </div>
     </Router>

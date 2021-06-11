@@ -3,7 +3,8 @@
   margin: 0;
   box-sizing: border-box;
 }
-body {
+body,
+input {
   font-family: "Poppins", sans-serif;
 }
 
@@ -20,12 +21,34 @@ body {
   top: 0;
   left: 0;
 }
-.signin {
+.signin-signup {
+  position: absolute;
+  right: 10%;
+  top: 27%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   font-size: 30px;
+}
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0rem 5rem;
+  transition: all 0.2s 0.7s;
+  overflow: hidden;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+form.sign-up-form {
+  opacity: 0;
+  z-index: 1;
+}
+form.sign-in-form {
+  z-index: 2;
 }
 .title {
   font-size: 2.2rem;
@@ -48,11 +71,8 @@ body {
   outline: none;
   border: none;
   line-height: 1;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  font-size: 15px;
-  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem; 
 }
 .input-field input::placeholder {
   font-weight: 500;
