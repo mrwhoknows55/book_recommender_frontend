@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "../Components/Header";
 import Home from "../Components/Home";
 import Signin from "../Components/Signin";
+import Signup from "../Components/Signup";
 import "../CSS/App.css";
 
 const App = () => {
@@ -10,13 +11,16 @@ const App = () => {
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/">
+          <Route path="/signin">
             <Signin />
           </Route>
-          {/* <Route path="/">
+           <Route path="/signup">
+            <Signup />
+          </Route>
+          <Route path="/">
             <Header />
             <Home />
-          </Route> */}
+          </Route> 
         </Switch>
       </div>
     </Router>

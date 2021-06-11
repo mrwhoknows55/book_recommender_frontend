@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Route, useHistory } from "react-router-dom";
 import "../CSS/Signin.css";
 /**import { FaUser } from "react-icons/fa";**/
-import Signup from "./Signup";
+
 import boyVector from "../Images/boy_vector_signin.svg";
 import axios from "axios";
 
@@ -49,12 +49,13 @@ const Signin = () => {
 
   // console.log(this.input.value);
   // console.log("Password: ", e.password.value);
-
   const signUp = (e) => {
     e.preventDefault();
-    <Link to="/signup">
+    /**<Link to="/signup">
       <Signup />
-    </Link>;
+    </Link>;**/
+    history.push("/signup");
+  
   };
   return (
     <div className="container">
@@ -80,17 +81,22 @@ const Signin = () => {
               Sign In
             </button>
           </form>
+
         </div>
       </div>
       <div className="panel-container">
-        <div className="content">
-          <h3>New Here?</h3>
-          <p>Create an account with us and get benefits of our system</p>
-          <button className="light_btn">SIGN UP</button>
+        <div className ="panel left-panel"></div>
+          <div className="content">
+            <h3>New Here?</h3>
+            <p>Create an account with us and get benefits of our system</p>
+            <button className="light_btn" onClick={signUp} >
+            SIGN UP
+          </button>
+          </div>
+          <img src={boyVector} alt="boy" className="image" />
         </div>
-        <img src={boyVector} alt="Image" className="image" />
       </div>
-    </div>
+
   );
 };
 
