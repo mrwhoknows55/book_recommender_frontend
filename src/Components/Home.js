@@ -1,10 +1,20 @@
-import React from "react";
-import { Route } from "react-router";
+import axios from "axios";
+import React, {useState} from "react";
 import "../CSS/Home.css";
-import Signin from "./Signin";
 
+const instance = axios.create({
+  withCredentials: true,
+  baseURL: `https://api-book-recommender.herokuapp.com/api/`
+});
 const Home = () => {
-  return <div className="home"></div>;
+  const [name, setName] = useState("");
+  instance.get("user").then((resp) => setName(resp.data.name));
+
+  return (
+      <div className="home">
+        <h1>Hello User</h1>
+      </div>
+  );
 };
 
 export default Home;

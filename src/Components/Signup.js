@@ -10,9 +10,6 @@ const Signup = () => {
   
    const signIn = (e) => {
     e.preventDefault();
-    /**<Link to="/signup">
-      <Signup />
-    </Link>;**/
     history.push("/signIn");
    };
   return (

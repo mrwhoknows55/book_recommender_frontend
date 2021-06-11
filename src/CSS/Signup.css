@@ -41,18 +41,11 @@ form {
   flex-direction: column;
   padding: 0rem 5rem;
   transition: all 0.2s 0.7s;
-  overflow: hidden;
+  /*overflow: hidden;*/
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
 
-.form.sign-up-form {
-  opacity: 0;
-  z-index: 1;
-}
-/*form.sign-in-form {
-  z-index: 1;
-}**/
 .title-1 {
   font-size: 2.2rem;
   color: #484897;
