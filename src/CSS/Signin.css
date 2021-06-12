@@ -95,7 +95,7 @@ form.sign-in-form {
   font-size: 1.05rem;
   font-weight: 600;
   margin-top: 20px;
-  padding: 4% 10%;
+  padding: 5% 10%;
 }
 .dark_btn:hover {
   background-color: #6d7dc5;
@@ -146,11 +146,12 @@ form.sign-in-form {
   border-radius: 49px;
   cursor: pointer;
   border: solid white 2px;
-  background-color: #ffffff00;
+  background-color: #48489700;
   font-size: 0.9rem;
   font-weight: 600;
   margin-top: 20px;
   padding: 1.5% 4%;
+  outline: none;
 }
 h3,
 p {

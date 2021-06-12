@@ -4,20 +4,15 @@ import LockIcon from "@material-ui/icons/Lock";
 import { useHistory } from "react-router-dom";
 import "../CSS/Signin.css";
 import boyVector from "../Images/boy_vector_signin.svg";
-import axios from "axios";
-
-const instance = axios.create({
-  withCredentials: true,
-  baseURL: `https://api-book-recommender.herokuapp.com/api/`,
-});
+import instance from "../Utils/axios";
+import emailValidation from "../Utils/emailValidation";
 
 const Signin = () => {
-    const history = useHistory();
+  const history = useHistory();
 
   const signUp = (e) => {
-  
     e.preventDefault();
-    history.push("/signup")
+    history.push("/signup");
   };
 
   return (
@@ -61,29 +56,32 @@ const SigninForm = () => {
     console.log(email);
     console.log(password);
 
-    const passwordInvalid = document.querySelector(".password__invalid");
-    if (email === "" || password === "") {
-      const output = `<small>Please enter valid details.</small>`;
-      passwordInvalid.innerHTML = output;
-    } else {
+    const empty__input = document.querySelector(".empty__input");
+    if (
+      email !== "" &&
+      email !== undefined &&
+      emailValidation(email) &&
+      password !== "" &&
+      password !== undefined
+    ) {
       instance
         .post("login", {
           email: email,
           password: password,
         })
         .then(function (response) {
-          // console.log(response);
-
           if (response.status === 200) {
+            window.sessionStorage.setItem("token", response.data.token);
             history.replace("/");
           }
         })
         .catch((error) => {
-          // alert(error);
-
           const output = `<small>${error}</small>`;
-          passwordInvalid.innerHTML = output;
+          empty__input.innerHTML = output;
         });
+    } else {
+      const output = `<small>Please enter valid details.</small>`;
+      empty__input.innerHTML = output;
     }
   };
   return (
@@ -97,6 +95,7 @@ const SigninForm = () => {
               type="text"
               placeholder="Email"
               onChange={(e) => handleInput1(e)}
+              required
             />
           </div>
 
@@ -106,9 +105,10 @@ const SigninForm = () => {
               type="password"
               placeholder="Password"
               onChange={(e) => handleInput2(e)}
+              required
             />
           </div>
-          <div className="password__invalid"></div>
+          <div className="empty__input"></div>
 
           <button type="submit" className="dark_btn" onClick={(e) => signIn(e)}>
             Sign In
