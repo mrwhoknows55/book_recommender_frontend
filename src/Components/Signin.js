@@ -7,6 +7,7 @@ import "../CSS/Signin.css";
 import boyVector from "../Images/boy_vector_signin.svg";
 import instance from "../Utils/axios";
 import emailValidation from "../Utils/emailValidation";
+import swal from 'sweetalert';
 
 const Signin = () => {
   const history = useHistory();
@@ -80,8 +81,7 @@ const SigninForm = () => {
           empty__input.innerHTML = output;
         });
     } else {
-      const output = `<small> Please enter valid details.</small>`;
-      empty__input.innerHTML = output;
+      swal("Alert", "Please enter valid details. ", "error");
     }
   };
   return (

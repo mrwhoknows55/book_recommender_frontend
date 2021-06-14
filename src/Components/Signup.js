@@ -7,6 +7,7 @@ import LockIcon from "@material-ui/icons/Lock";
 import womenVector from "../Images/vector_women.svg";
 import instance from "../Utils/axios";
 import emailValidation from "../Utils/emailValidation";
+import swal from 'sweetalert';
 
 const Signup = () => {
   const history = useHistory();
@@ -78,8 +79,9 @@ const Signup = () => {
           empty__input.innerHTML = output;
         });
     } else {
-      const output = `<small>Please enter valid details.</small>`;
-      empty__input.innerHTML = output;
+      /*const output = `<small>Please enter valid details.</small>`;
+      empty__input.innerHTML = output;*/
+       swal("Alert", "Please enter valid details. ", "error");
     }
   };
   return (
