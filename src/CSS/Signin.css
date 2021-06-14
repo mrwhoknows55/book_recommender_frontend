@@ -168,6 +168,9 @@ p {
 .panel-container {
   padding: 2% 17% 2% 8%;
 }
-/* .password__invalid{
-
-} */
+.empty__input {
+  color: red;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-shadow: 1px 1px #c4b63d;
+}

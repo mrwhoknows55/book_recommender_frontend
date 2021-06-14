@@ -37,14 +37,14 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h1>Hello {name}</h1>
+      <h1>Hello {name ? name : "Guest"}</h1>
       <button
         className="logout__btn"
         onClick={(e) => {
           logOut(e);
         }}
       >
-        Log Out
+        LogOut
       </button>
     </div>
   );

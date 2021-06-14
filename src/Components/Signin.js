@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import EmailIcon from "@material-ui/icons/Email";
 import LockIcon from "@material-ui/icons/Lock";
+// import ErrorIcon from "@material-ui/icons/Error";
 import { useHistory } from "react-router-dom";
 import "../CSS/Signin.css";
 import boyVector from "../Images/boy_vector_signin.svg";
@@ -55,7 +56,6 @@ const SigninForm = () => {
     e.preventDefault();
     console.log(email);
     console.log(password);
-
     const empty__input = document.querySelector(".empty__input");
     if (
       email !== "" &&
@@ -80,7 +80,7 @@ const SigninForm = () => {
           empty__input.innerHTML = output;
         });
     } else {
-      const output = `<small>Please enter valid details.</small>`;
+      const output = `<small> Please enter valid details.</small>`;
       empty__input.innerHTML = output;
     }
   };

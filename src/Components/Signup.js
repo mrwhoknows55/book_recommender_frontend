@@ -14,6 +14,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState();
   const [password2, setPassword2] = useState();
+  const empty__input = document.querySelector(".empty__input");
 
   const signIn = (e) => {
     e.preventDefault();
@@ -23,18 +24,22 @@ const Signup = () => {
   const handleInput1 = (e) => {
     e.preventDefault();
     setName(e.target.value);
+    empty__input.innerHTML = "";
   };
   const handleInput2 = (e) => {
     e.preventDefault();
     setEmail(e.target.value);
+    empty__input.innerHTML = "";
   };
   const handleInput3 = (e) => {
     e.preventDefault();
     setPassword1(e.target.value);
+    empty__input.innerHTML = "";
   };
   const handleInput4 = (e) => {
     e.preventDefault();
     setPassword2(e.target.value);
+    empty__input.innerHTML = "";
   };
 
   const signUp = (e) => {
@@ -44,7 +49,6 @@ const Signup = () => {
     console.log(password1);
     console.log(password2);
 
-    const empty__input = document.querySelector(".empty__input");
     if (
       name !== "" &&
       name !== undefined &&
