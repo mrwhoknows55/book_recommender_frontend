@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, Route, useHistory } from "react-router-dom";
+import React, {useState} from "react";
+import {useHistory} from "react-router-dom";
 import "../CSS/Signup.css";
 import PersonIcon from "@material-ui/icons/Person";
 import EmailIcon from "@material-ui/icons/Email";
@@ -75,12 +75,10 @@ const Signup = () => {
           }
         })
         .catch((error) => {
-          const output = `<small>${error}</small>`;
-          empty__input.innerHTML = output;
+          //TODO: change this later
+          swal("Alert", error.toLocaleString(), "error");
         });
     } else {
-      /*const output = `<small>Please enter valid details.</small>`;
-      empty__input.innerHTML = output;*/
        swal("Alert", "Please enter valid details. ", "error");
     }
   };
@@ -125,7 +123,7 @@ const Signup = () => {
                 onChange={(e) => handleInput4(e)}
               />
             </div>
-            <div className="empty__input"></div>
+            <div className="empty__input"/>
             <input
               type="submit"
               class="dark_btn"
@@ -138,7 +136,7 @@ const Signup = () => {
         </div>
       </div>
       <div className="panel-container-1">
-        <div className="panel right-panel"></div>
+        <div className="panel right-panel"/>
         <div className="content">
           <h3>One of us ?</h3>
           <p>then what you are doing here....</p>
