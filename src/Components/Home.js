@@ -16,6 +16,9 @@ const Home = () => {
       headers: { Authentication: token },
     });
     instance.get("user").then((resp) => setName(resp.data.name));
+  } else {
+    window.sessionStorage.removeItem("token");
+    history.replace("/signin");
   }
   const logOut = (e) => {
     e.preventDefault();
