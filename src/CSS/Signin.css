@@ -72,7 +72,7 @@ form.sign-in-form {
   width: 100%;
   background-color: #f0f0f0;
   margin: 10px 0;
-  height: 55px;
+  height: 60px;
   border-radius: 55px;
   display: grid;
   grid-template-columns: 20% 80%;
@@ -83,7 +83,7 @@ form.sign-in-form {
 .input-field .icon {
   text-align: center;
   line-height: 55px;
-  color:#aaa;
+  color: #aaa;
   transition: 0.5s;
 }
 
@@ -119,7 +119,7 @@ form.sign-in-form {
 }
 
 .btn:hover {
-  background-color: #162879;;
+  background-color: #162879;
 }
 .panels-container {
   position: absolute;
@@ -349,7 +349,7 @@ form.sign-in-form {
   }
 }
 
- @media (max-width: 570px) {
+@media (max-width: 570px) {
   form {
     padding: 0 1.5rem;
   }
@@ -372,5 +372,11 @@ form.sign-in-form {
   .container.sign-up-mode:before {
     bottom: 28%;
     left: 50%;
+  }
+}
+@media (max-height: 1920px) {
+  .container:before {
+    height: 2400px;
+    width: 2400px;
   }
 }
