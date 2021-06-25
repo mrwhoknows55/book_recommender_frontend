@@ -3,13 +3,14 @@ import axios from "axios";
 import instance from "../Utils/axios";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import useScroll from "../Utils/Hooks/useScroll";
+// import useScroll from "../Utils/Hooks/useScroll";
 import useFetchBook from "../Utils/Hooks/useFetchBook";
 import Loading from "./Loading";
 import Background from "./Background";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import Card from "./Card";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const Home = () => {
   const [name, setName] = useState("");
@@ -22,18 +23,19 @@ const Home = () => {
   const [books, nextPage, isLoading] = useFetchBook(page);
 
   // Custom Hook For Fetching Scroll Position for infinte scrolling
-  const scrollPosition = useScroll();
+  // const scrollPosition = useScroll();
 
-  // USE EFFECT FOR SCROLLING
-  useEffect(() => {
-    if (scrollPosition === document.body.offsetHeight - window.innerHeight) {
-      console.log(
-        scrollPosition,
-        window.innerHeight,
-        document.body.offsetHeight
-      );
-    }
-  }, [scrollPosition]);
+  // // USE EFFECT FOR SCROLLING
+  // useEffect(() => {
+  //   if (scrollPosition >= document.body.offsetHeight - window.innerHeight) {
+  //     console.log("Im at the bottom");
+
+  //     /* Load more books if available else print no books available*/
+
+  //     nextPage ? setPage(page + 1) : <p>No Books available</p>;
+  //   }
+  //   // console.log(scrollPosition, window.innerHeight, document.body.offsetHeight);
+  // }, [scrollPosition]);
 
   // GETTING THE TOKEN FROM SESSION STORAGE
   const token = window.sessionStorage.getItem("token");
@@ -81,41 +83,32 @@ const Home = () => {
         {/* NAVBAR COMPONENT ↓*/}
         <Navbar />
 
-        {/* LOADING STATE.... THEN IMPORT LOADING COMPONENT*/}
-        {isLoading ? (
-          <Loading />
-        ) : (
-          <>
-            {/* BOOKS CARD COMPONENT ↓*/}
-            <div className="cards-wrap">
-              {books.map((book) => {
-                return (
-                  <Card
-                    image={book.image_url}
-                    author={book.authors}
-                    title={book.title}
-                    rating={4} /*{Math.floor(book.rating)}*/
-                    id={book.book_id}
-                  />
-                );
-              })}
-            </div>
+        {/* USED INFINTE SCROLL REACT COMPONENT FOR INFINTE SCROLLING & LOADING BOOKS */}
+        <InfiniteScroll
+          dataLength={books.length}
+          next={() => {
+            setPage(page + 1);
+          }}
+          hasMore={true}
+        >
+          {/* BOOKS CARD COMPONENT ↓*/}
+          <div className="cards-wrap">
+            {books.map((book) => {
+              return (
+                <Card
+                  image={book.image_url}
+                  author={book.authors}
+                  title={book.title}
+                  rating={4} /*{Math.floor(book.rating)}*/
+                  id={book.book_id}
+                />
+              );
+            })}
+          </div>
+        </InfiniteScroll>
 
-            {/* Load more button if books available else print no books available*/}
-            {nextPage ? (
-              <button
-                onClick={(e) => {
-                  console.log("Button clicked");
-                  setPage(page + 1);
-                }}
-              >
-                Load More
-              </button>
-            ) : (
-              <p>No Books available</p>
-            )}
-          </>
-        )}
+        {/* LOADING STATE.... THEN IMPORT LOADING COMPONENT*/}
+        {isLoading && <Loading />}
       </div>
     </>
   );
