@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 export default function useScroll() {
-  const [scrollPostion, setScrollPostion] = useState(null);
+  const [scrollPosition, setScrollPosition] = useState(null);
 
   const handleScroll = () => {
-    setScrollPostion(window.scrollY);
+    setScrollPosition(window.scrollY);
   };
 
   useEffect(() => {
@@ -13,5 +13,5 @@ export default function useScroll() {
     return () => document.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return scrollPostion;
+  return scrollPosition;
 }
