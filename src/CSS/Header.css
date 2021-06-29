@@ -1,7 +1,7 @@
 /* CSS for header-box containing h1 and h2 ↓*/
 .header-box {
   position: absolute;
-  width: 19%;
+  width: 22%;
   height: 26%;
   top: -1%;
   left: 4%;
@@ -14,12 +14,12 @@
 
 /* CSS for heading BOOK (h1) ↓*/
 .header-box .header h1 {
-  /*font-style: italic;*/
+  /* font-style: italic; */
   position: absolute;
   top: -10%;
-  left: -2%;
+  left: -3%;
   font-family: "Poppins", sans-serif;
-  font-size: 5.85em;
+  font-size: 6.85em;
   font-weight: 900;
   /*mix-blend-mode: darken;*/
   color: rgba(200, 216, 234, 1);
@@ -28,10 +28,10 @@
 /* CSS for heading RECOMMENDER (h2) ↓ */
 .header h2 {
   position: absolute;
-  top: 55%;
+  top: 60%;
   left: -1.85%;
   font-style: italic;
-  font-size: 2.118em;
+  font-size: 2.45em;
   font-weight: 900;
   color: rgba(200, 216, 234, 1);
 }

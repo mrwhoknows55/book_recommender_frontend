@@ -15,14 +15,15 @@
   justify-content: space-between;
 }
 
-/* CSS for responsive navbar */
+/* CSS  navbar */
 nav .content {
   display: flex;
   align-items: center;
-  margin-left: 510px;
+  margin-left: 500px;
 }
 nav .content .links {
   display: flex;
+  align-items: center;
 }
 .content .logo a {
   color: #fff;
@@ -32,17 +33,23 @@ nav .content .links {
 .content .links li {
   list-style: none;
   line-height: 70px;
-  margin: 0 3.5%;
   font-weight: 700;
+  margin-left: 5.3%;
+  font-family: "Poppins";
+  font-weight: bold;
+
+  letter-spacing: 0.155em;
 }
+
 .content .links li a,
 .content .links li label {
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 9px 17px;
-  border-radius: 5px;
+  color: #c8d8ea;
+  font-size: 25px;
+  font-weight: 700;
+  padding: 7%;
+  border-radius: 16px;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 .content .links li label {
   display: none;
@@ -51,6 +58,50 @@ nav .content .links {
 .content .links li label:hover {
   background: #323c4e;
 }
+.content .links .login {
+  display: grid;
+
+  align-items: center;
+  grid-template-columns: 10% 90%;
+  background-color: #c8d8ea;
+  border-radius: 16px;
+  width: 350px;
+  border: none;
+  color: #41519a;
+  /* padding: 0 0.3%; */
+  font-size: 25px;
+  outline: none;
+  height: 40px;
+}
+.login .loginIcon {
+  width: 20px;
+  height: 20px;
+  margin-left: 30%;
+}
+
+.login .loginBtn {
+  width: 100%;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.5s;
+  font-style: bold;
+  line-height: 30px;
+  letter-spacing: 0.03em;
+  color: #41519a;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 22px;
+
+  /* color: #333; */
+}
+li .btn:hover {
+  background-color: #41519a;
+  color: #fff;
+}
+
 .menu-icon {
   color: #fff;
   font-size: 18px;
@@ -65,7 +116,7 @@ nav .content .links {
 
 /* CSS for navbar contents */
 .search-field {
-  max-width: 900px;
+  max-width: 490px;
   width: 100%;
   background-color: #f0f0f0;
   margin: 10px 0;
@@ -75,6 +126,7 @@ nav .content .links {
   grid-template-columns: 10% 90%;
   padding: 2% 5%;
   position: relative;
+  align-items: center;
 }
 
 .search-field .icon {
@@ -94,8 +146,13 @@ nav .content .links {
 }
 
 .search-field input::placeholder {
-  color: #aaa;
-  font-weight: 500;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.155em;
+  color: rgba(18, 35, 46, 0.37);
 }
 /* .search-box {
     margin-top: 20px;
