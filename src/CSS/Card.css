@@ -5,12 +5,13 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 7%;
-  padding: 3% 0;
+  padding: 3% 1%;
+  padding-right: 4%;
 }
 
 /* CSS for whole card ↓ */
 .cards-wrap .card-item {
-  width: 12%; /*201px*/
+  width: 14%; /*201px*/
   margin: 0 1%;
   padding: 1% 0; /*15px 10px*/
 }
@@ -22,7 +23,7 @@
   /*min-width: 225px;*/
   /* max-height: 600px;*/
   height: 95%;
-  width: 100%;
+  width: 80%;
 }
 
 /* CSS for book image ↓ */
