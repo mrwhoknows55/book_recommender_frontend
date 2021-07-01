@@ -25,6 +25,9 @@ const Navbar = () => {
   return (
     <div className="wrapper-nav">
       <nav>
+      <input type="checkbox"
+        id="check"
+        />
         <label for="show-menu" className="menu-icon">
           <MenuIcon />
         </label>
@@ -59,7 +62,7 @@ const Navbar = () => {
               <button className="loginBtn">Logout</button>
             </li>
           </ul>
-        </div>
+          </div>
       </nav>
       {/* <InfiniteScroll
           dataLength={books.length}

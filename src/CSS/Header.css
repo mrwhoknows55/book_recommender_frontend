@@ -35,3 +35,12 @@
   font-weight: 900;
   color: rgba(200, 216, 234, 1);
 }
+/* -- Resposive */
+@media screen and ( width:1024px) {
+  .header-box .header h1{
+    display:none;
+  }
+  .header h2 {
+    display: none;
+  }
+}

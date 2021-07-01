@@ -7,5 +7,14 @@ body {
   font-family: "Poppins", sans-serif;
   /* overflow-x: hidden; */
 }
+/* CSS for wrapping all cards in one class called cards-wrap*/
 
+.cards-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 7%;
+  padding: 3% 0;
+}
 
