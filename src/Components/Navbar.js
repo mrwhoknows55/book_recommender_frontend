@@ -33,7 +33,7 @@ const Navbar = () => {
     <>
       <div className="wrapper-nav">
         {/* DEMO NAVBAR HAMBURGER CODE STARTS here */}
-        <div className="navbar">
+        {/* <div className="navbar">
           <Link to="#" className="menu-bars">
             <MenuIcon className="hamburger" onClick={showSidebar} />
           </Link>
@@ -56,7 +56,7 @@ const Navbar = () => {
               );
             })}
           </ul>
-        </nav>
+        </nav> */}
 
         {/* DEMO NAVBAR HAMBURGER CODE ENDS here */}
 

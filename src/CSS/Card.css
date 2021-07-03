@@ -63,10 +63,14 @@
 /* CSS for rating ↓ */
 .card-inner .rating {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 60%;
+  font-size: 0.7em;
+  font-weight: 500;
   margin-top: 5%;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .wrapper-nav .menu-icon {
