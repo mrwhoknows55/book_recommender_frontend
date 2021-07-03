@@ -3,7 +3,6 @@ import axios from "axios";
 import instance from "../Utils/axios";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-// import useScroll from "../Utils/Hooks/useScroll";
 import useFetchBook from "../Utils/Hooks/useFetchBook";
 import Loading from "./Loading";
 import Background from "./Background";
@@ -22,21 +21,6 @@ const Home = () => {
   //Custom Hook For Fetching Book & destructring using [] & fetching errors & fetching loader
   const [books, nextPage, isLoading] = useFetchBook(page);
 
-  // Custom Hook For Fetching Scroll Position for infinte scrolling
-  // const scrollPosition = useScroll();
-
-  // // USE EFFECT FOR SCROLLING
-  // useEffect(() => {
-  //   if (scrollPosition >= document.body.offsetHeight - window.innerHeight) {
-  //     console.log("Im at the bottom");
-
-  //     /* Load more books if available else print no books available*/
-
-  //     nextPage ? setPage(page + 1) : <p>No Books available</p>;
-  //   }
-  //   // console.log(scrollPosition, window.innerHeight, document.body.offsetHeight);
-  // }, [scrollPosition]);
-
   // GETTING THE TOKEN FROM SESSION STORAGE
   const token = window.sessionStorage.getItem("token");
 
@@ -49,7 +33,7 @@ const Home = () => {
     instance.get("user").then((resp) => setName(resp.data.name));
   } else {
     window.sessionStorage.removeItem("token");
-    // history.replace("/signin");
+    history.replace("/signin");
   }
   const logOut = (e) => {
     e.preventDefault();
@@ -99,7 +83,7 @@ const Home = () => {
                   image={book.image_url}
                   author={book.authors}
                   title={book.title}
-                  rating={4} /*{Math.floor(book.rating)}*/
+                  rating={book.avg_rating} /*{Math.floor(book.rating)}*/
                   id={book.book_id}
                 />
               );

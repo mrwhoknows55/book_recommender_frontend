@@ -1,6 +1,6 @@
 import { useHistory } from "react-router";
 import "../CSS/Card.css";
-
+import StarRatings from "react-star-ratings";
 const Card = (props) => {
   const { title, image, author, rating, id } = props;
   const history = useHistory();
@@ -29,11 +29,17 @@ const Card = (props) => {
           <p>{title}</p>
         </div>
         <div className="rating">
-          {Array(rating)
-            .fill()
-            .map((i) => (
-              <p>⭐</p>
-            ))}
+          {
+            <StarRatings
+              rating={rating}
+              starRatedColor="yellow"
+              starEmptyColor="#C8D8EA"
+              starDimension="20px"
+              starSpacing="2px"
+              className="star_rating"
+            />
+          }
+          {rating} / 5
         </div>
       </div>
     </div>
