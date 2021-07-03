@@ -1,0 +1,14 @@
+/* CSS FOR THE LOADER */
+.loader {
+  color: rgba(32, 54, 71, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

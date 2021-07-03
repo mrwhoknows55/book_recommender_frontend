@@ -1,0 +1,212 @@
+
+/* CSS for whole card ↓ */
+.card-item {
+  width: 12%; /*201px*/
+  margin: 0 1%;
+  padding: 1% 0; /*15px 10px*/
+}
+
+/* CSS for card content i.e image, author, title ↓*/
+.card-inner {
+  background: rgba(32, 54, 71, 1);
+  border-radius: 7%;
+  /*min-width: 225px;*/
+  /* max-height: 600px;*/
+  height: 95%;
+  width: 80%;
+}
+
+/* CSS for book image ↓ */
+.card-inner img {
+  width: 100%;
+  /* object-fit: fill; */
+  border-radius: 7%;
+  height: 100%;
+  max-height: 68%;
+  margin-bottom: 3%;
+}
+
+/* CSS for class roll-name ↓*/
+.card-inner .roll-name {
+  font-weight: 500;
+  /*letter-spacing: 1px;*/
+  text-transform: uppercase;
+  font-size: 0.7em;
+
+  color: #fff;
+  line-height: 100%;
+  /* height: 100%; */
+  max-height: 50%;
+  padding: 0 7%;
+}
+
+/* CSS for Roll Name p tag ↓*/
+.roll-name p {
+  text-align: center;
+  cursor: pointer;
+  padding: 1.5% 2%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+/* CSS for rating ↓ */
+.card-inner .rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  font-weight: 500;
+  margin-top: 5%;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.wrapper-nav .menu-icon {
+  display: none;
+}
+
+/* ---RESPOSIVE WORKS STARTS FROM HERE --- */
+@media screen and (max-width:1024px) {
+  .background {
+    display: none;
+  }
+  
+  .card-item {
+      width: 10%;
+  }
+  .card-inner img {
+      width: 100%;
+  }
+  .card-inner .roll-name {
+      align-items: center;
+  }
+  .background {
+      visibility: none;
+  }
+}
+@media screen and (max-width:812px) {
+  .card-item {
+    width: 20%;
+  }
+}
+@media screen and (max-width:768px) {
+  .card-item {
+      width: 40%;
+    
+  }
+  .background {
+      visibility: none;
+  }
+}
+@media screen and (max-width:568px){
+  .background {
+    display: none;
+  }
+  
+  .card-wrap {
+    width: 100%;
+  }
+  .card-item {
+      width: 80%;
+      margin-left: 17%;
+  } 
+}
+/*@media screen and (max-width:375px)
+{
+  .background {
+    display: none;
+  }
+  .card-item {
+    align-items: center;
+    margin-left: 30%;
+    width: 100%;
+  }
+}*/
+
+
+/****/
+@media screen and (max-width:1024px){
+  .header-box {
+    display: none;
+  }
+  .header-box .header h1 {
+    display: none;
+  }
+  .header h2 {
+    display: none;
+  }
+  .search-field {
+    display: none;
+  }
+  .login .loginBtn {
+    display: none;
+  }
+  .login .loginIcon {
+    display: none;
+  }
+}
+
+@media screen and (max-width:812px){
+  .header-box {
+    display: none;
+  }
+  .header-box .header h1 {
+    display: none;
+  }
+  .header h2 {
+    display: none;
+  }
+  .search-field {
+    display: none;
+  }
+  .login .loginBtn {
+    display: none;
+  }
+  .login .loginIcon {
+    display: none;
+  }
+}
+
+@media screen and (max-width:768px){
+  .header-box {
+    display: none;
+  }
+  .header-box .header h1 {
+    display: none;
+  }
+  .header h2 {
+    display: none;
+  }
+  .search-field {
+    display: none;
+  }
+  .login .loginBtn {
+    display: none;
+  }
+  .login .loginIcon {
+    display: none;
+  }
+}
+
+@media screen and (max-width:568px){
+  .header-box {
+    display: none;
+  }
+  .header-box .header h1 {
+    display: none;
+  }
+  .header h2 {
+    display: none;
+  }
+  .search-field {
+    display: none;
+  }
+  .login .loginBtn {
+    display: none;
+  }
+  .login .loginIcon {
+    display: none;
+  }
+}
