@@ -5,16 +5,22 @@ body {
   background-color: rgba(200, 216, 234, 1);
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
-  /* overflow-x: hidden; */
+   overflow-x: hidden; 
 }
 /* CSS for wrapping all cards in one class called cards-wrap*/
-
 .cards-wrap {
   width: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 7%;
-  padding: 3% 0;
+  padding: 3% 1%;
+  padding-right: 4%;
 }
-
+@media screen and (max-width:500px)
+{
+  .cards-wrap {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}

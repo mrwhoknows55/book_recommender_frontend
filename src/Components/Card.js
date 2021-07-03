@@ -6,12 +6,14 @@ const Card = (props) => {
   const history = useHistory();
   const viewBook = (e, id) => {
     e.preventDefault();
-    history.push({
-      pathname: "/book",
-      state: {
-        book_id: id,
-      },
-    });
+    // history.push({
+    //   pathname: "/book",
+    //   state: {
+    //     book_id: id,
+    //   },
+    // });
+    sessionStorage.setItem("bookId", id);
+    history.push("./book");
   };
   return (
     <div className="card-item">
