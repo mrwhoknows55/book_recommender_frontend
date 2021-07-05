@@ -6,7 +6,8 @@ import Header from "./Header";
 import Navbar from "./Navbar";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
-import StarRatings from 'react-star-ratings';
+import StarRatings from "react-star-ratings";
+import swal from "sweetalert";
 function Book() {
   // console.log(useLocation());
   // const book_id = useLocation().state.book_id;
@@ -30,12 +31,33 @@ function Book() {
     console.log({ token });
     if (token) {
       // useEffect(() => {
+
       instance
-        .post(`library/${book_id}`, {
-          headers: { Authentication: token },
-        })
+        .post(
+          `library/${book_id}`,
+          {},
+          {
+            headers: { Authentication: token },
+          }
+        )
         .then((response) => {
           console.log(response.data);
+          swal({
+            title: "Done",
+            text: response.data.message,
+            icon: "success",
+            button: "OK",
+          });
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+      instance
+        .get(`library/`, {
+          headers: { Authentication: token },
+        })
+        .then((res) => {
+          console.log(res);
         })
         .catch((e) => {
           console.log(e);
@@ -65,16 +87,16 @@ function Book() {
                 </h4>
                 <p className="book-rating">
                   <strong>Rated by:</strong> {item.ratings_count} readers.
-                  <StarRatings
-                    rating={item.avg_rating}
-                    starRatedColor="yellow"
-                    starEmptyColor="#f1f1f1"
-                    starDimension="20px"
-                    starSpacing="2px"
-                    className="star_rating"
-                  />
+                  <div className="star_rating">
+                    <StarRatings
+                      rating={item.avg_rating}
+                      starRatedColor="#FFC759"
+                      starEmptyColor="#5F5C53"
+                      starDimension="20px"
+                      starSpacing="2px"
+                    />
+                  </div>
                 </p>
-                <p className="book-description">{item.description}</p>
 
                 <button
                   className="goToLibrary"
@@ -85,6 +107,7 @@ function Book() {
                   {<LibraryBooksIcon className="libraray-icon" />}
                   <p>Add to Library</p>
                 </button>
+                <p className="book-description">{item.description}</p>
               </div>
             </>
           );

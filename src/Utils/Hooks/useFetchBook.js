@@ -16,7 +16,7 @@ export default function useFetchBook(page, searchTerm) {
     console.log("He");
     setIsLoading(true);
     instance
-      .get(`books?page=${page}&limit=27`)
+      .get(`books?page=${page}&limit=21`)
       .then((response) => {
         console.log(response.data.results);
 
@@ -26,7 +26,7 @@ export default function useFetchBook(page, searchTerm) {
         setIsLoading(false);
       })
       .catch((e) => {
-        swal("Alert", e.response.statusText, "error");
+        swal("Alert", e, "error");
         setIsLoading(false);
       });
   }, [page]);

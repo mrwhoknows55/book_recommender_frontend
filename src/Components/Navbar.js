@@ -39,7 +39,7 @@ const Navbar = () => {
     <>
       <div className="wrapper-nav">
         {/* DEMO NAVBAR HAMBURGER CODE STARTS here */}
-        <div className="navbar">   
+        <div className="navbar">
           <Link to="#" className="menu-bars1">
             <MenuIcon className="hamburger" onClick={showSidebar} />
           </Link>
@@ -83,16 +83,16 @@ const Navbar = () => {
               <h2>RECOMMENDER</h2>
             </li>
             <div className="annimation-area">
-		  <ul className="box-area">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-      </ul>
-      </div>
-         
+              <ul className="box-area">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
@@ -105,7 +105,7 @@ const Navbar = () => {
             })}
           </ul>
         </nav>
-        
+
         {/* DEMO NAVBAR HAMBURGER CODE ENDS here */}
 
         {/* Old Project Code starts from here down */}

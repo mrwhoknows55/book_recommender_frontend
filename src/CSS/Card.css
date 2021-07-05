@@ -1,9 +1,8 @@
-
 /* CSS for whole card ↓ */
 .card-item {
   width: 12%; /*201px*/
   margin: 0 1%;
-  padding: 1% 0; /*15px 10px*/
+  padding: 2% 0; /*15px 10px*/
 }
 
 /* CSS for card content i.e image, author, title ↓*/
@@ -62,6 +61,11 @@
   color: #fff;
   text-transform: uppercase;
   z-index: 1;
+  background-color: #12232e;
+  border-radius: 10px;
+  width: 80%;
+  padding: 2%;
+  margin-left: 10%;
 }
 
 .wrapper-nav .menu-icon {
@@ -69,50 +73,49 @@
 }
 
 /* ---RESPOSIVE WORKS STARTS FROM HERE --- */
-@media screen and (max-width:1024px) {
+@media screen and (max-width: 1024px) {
   .background {
     display: none;
   }
-  
+
   .card-item {
-      width: 10%;
+    width: 10%;
   }
   .card-inner img {
-      width: 100%;
+    width: 100%;
   }
   .card-inner .roll-name {
-      align-items: center;
+    align-items: center;
   }
   .background {
-      visibility: none;
+    visibility: none;
   }
 }
-@media screen and (max-width:812px) {
+@media screen and (max-width: 812px) {
   .card-item {
     width: 20%;
   }
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   .card-item {
-      width: 40%;
-    
+    width: 40%;
   }
   .background {
-      visibility: none;
+    visibility: none;
   }
 }
-@media screen and (max-width:568px){
+@media screen and (max-width: 568px) {
   .background {
     display: none;
   }
-  
+
   .card-wrap {
     width: 100%;
   }
   .card-item {
-      width: 80%;
-      margin-left: 17%;
-  } 
+    width: 80%;
+    margin-left: 17%;
+  }
 }
 /*@media screen and (max-width:375px)
 {
@@ -126,9 +129,8 @@
   }
 }*/
 
-
 /****/
-@media screen and (max-width:1024px){
+@media screen and (max-width: 1024px) {
   .header-box {
     display: none;
   }
@@ -149,7 +151,7 @@
   }
 }
 
-@media screen and (max-width:812px){
+@media screen and (max-width: 812px) {
   .header-box {
     display: none;
   }
@@ -170,7 +172,7 @@
   }
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width: 768px) {
   .header-box {
     display: none;
   }
@@ -191,7 +193,7 @@
   }
 }
 
-@media screen and (max-width:568px){
+@media screen and (max-width: 568px) {
   .header-box {
     display: none;
   }
