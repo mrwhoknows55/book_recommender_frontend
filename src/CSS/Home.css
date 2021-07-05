@@ -18,6 +18,11 @@ body {
   /* padding-right: 4%; */
 }
 @media screen and (max-width: 500px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+@media screen and (max-width: 500px) {
   .cards-wrap {
     overflow-x: hidden;
     overflow-y: hidden;

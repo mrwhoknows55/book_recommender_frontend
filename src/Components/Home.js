@@ -24,20 +24,8 @@ const Home = () => {
   // GETTING THE TOKEN FROM SESSION STORAGE
   const token = window.sessionStorage.getItem("token");
 
-  useEffect(() => {
-    // if (token) {
-    //   instance
-    //     .get("user", {
-    //       headers: { Authentication: token },
-    //     })
-    //     .then((resp) => {
-    //       setName(resp.data.name);
-    //       console.log(resp.data.name);
-    //     });
-    // } else {
-    //   window.sessionStorage.removeItem("token");
-    //   history.replace("/signin");
-    // }
+  // useEffect(() => {
+  if (token) {
     instance
       .get("user", {
         headers: { Authentication: token },
@@ -46,7 +34,19 @@ const Home = () => {
         setName(resp.data.name);
         console.log(resp.data.name);
       });
-  },[]);
+  } else {
+    window.sessionStorage.removeItem("token");
+    history.replace("/signin");
+  }
+  // instance
+  //   .get("user", {
+  //     headers: { Authentication: token },
+  //   })
+  //   .then((resp) => {
+  //     setName(resp.data.name);
+  //     console.log(resp.data.name);
+  //   });
+  // },[]);
   const logOut = (e) => {
     e.preventDefault();
 

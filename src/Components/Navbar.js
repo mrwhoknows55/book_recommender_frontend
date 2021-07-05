@@ -3,6 +3,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import SearchIcon from "@material-ui/icons/Search";
 import LockIcon from "@material-ui/icons/Lock";
+import CancelIcon from '@material-ui/icons/Cancel';
 import "../CSS/Navbar.css";
 import "../CSS/annimation.css";
 import { useState } from "react";
@@ -30,6 +31,10 @@ const Navbar = () => {
 
   const showSidebar = () => setSidebar(!sidebar);
 
+  const [searchbar, setSearchbar] = useState(false);
+
+  const showSearchbar = () => setSearchbar(!searchbar);
+
   return (
     <>
       <div className="wrapper-nav">
@@ -41,8 +46,31 @@ const Navbar = () => {
           <li className="main_nav_text">
             <h1> BOOK</h1>
             <h2>RECOMMENDER</h2>
-          </li>
-        </div>
+
+          <div className="wrapper-search">
+            <div className="search-field-nav">
+                <SearchIcon className="icon" />
+                <input
+                  type="search"
+                  className="search-box-nav"
+                  placeholder="SEARCH"
+                  onChange={(e) => {
+                    handleSearch(e);
+                  }}
+                />
+                <nav className={searchbar ? "nav-search active" : "nav-search"}>
+                  <ul className="nav-search-items" onClick={showSearchbar}>
+                <li className="cancel-icon">
+                <CancelIcon />
+                </li>
+               
+                </ul>
+                </nav>
+              </div>
+            
+          </div>
+        </li>
+          </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">

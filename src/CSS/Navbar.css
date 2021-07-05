@@ -7,6 +7,7 @@
   /*justify-content: center;*/
   align-items: center;
   /* display: none; */
+  opacity: 2;
 }
 .menu-bars {
   margin-left: -24rem;
@@ -27,13 +28,13 @@
 }
 .main_nav_text {
   list-style: none;
-  margin-top: -19%;
+  margin-top: -22%;
   margin-left: -3%;
 }
 .main_nav_text h1 {
   color: #fff;
-  font-size: 40px;
-  font-weight: 2000;
+  font-size: 50px;
+  font-weight: 4000;
   margin-left: -5%;
 }
 .main_nav_text h2 {
@@ -52,6 +53,7 @@
   top: 0;
   left: -100%;
   transition: 850ms;
+  z-index: 2;
 }
 .nav-menu.active {
   left: 0;
@@ -347,3 +349,135 @@ li .btn:hover {
   font-size: 40px;
   font-weight: 700;
 }
+.search-field-nav {
+  position:absolute;
+  right: 2%;
+  top: 1%;
+  /*max-width: 490px;*/
+  width: 10px;
+  /*background-color: #120680;*/
+  margin: 10px 0;
+  height: 40px;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 10% 90%;
+  padding: 2% 5%;
+  align-items: center;
+}
+
+.search-field-nav .icon {
+  position: absolute;
+  left: 20%;
+  top: 15%;
+  text-align: center;
+  line-height: 10px;
+  color: #aaa;
+  transition: 0.5s;
+  size: 20px;
+}
+.search-field-nav .cancel-icon {
+ display: none;
+}
+.search-field-nav input {
+  display: none;
+  position: absolute;
+  right: 1%;
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-size: 0.9rem;
+  color: rgb(202, 12, 12);
+  font-weight: 500;
+}
+
+.search-field-nav .search-box-nav .placeholder {
+  display: none;
+  position: absolute;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.155em;
+  color: rgba(231, 182, 22, 0.37);
+  left: 10%;
+  transition-delay: 2s;
+}
+.search-field-nav:hover {
+  width: 95%;
+  top: 10%;
+  background-color: #fff;
+  cursor: pointer;
+  animation: ease-in-out;
+  transition: 0.5s;
+  opacity: 2;
+}
+.search-field-nav:hover .icon {
+  position: absolute;
+  top: 20%;
+  left: 4%;
+  text-align: center;
+  line-height: 10px;
+  color: #aaa;
+  transition: 1s;
+}
+.search-field-nav:hover input {
+  position: absolute;
+  right: 1%;
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-size: 0.9rem;
+  color: rgb(12, 11, 11);
+  font-weight: 500;
+  display: block;
+  transition: 2s;
+}
+.search-field-nav:hover .search-box-nav .placeholder {
+  display: none;
+  position: absolute;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.155em;
+  color: rgba(221, 218, 12, 0.37);
+  left: 10%;
+  transition-delay: 2s;
+}
+.search-field-nav:hover .cancel-icon {
+  display: block;
+  position: absolute;
+  top: -80%; 
+  right : -44%;
+  text-align: center;
+  line-height: 10px;
+  color: rgb(235, 13, 13);
+  transition: ease-in-out;
+  transition-delay: 2s;
+}
+.nav-search.active {
+  left: 0;
+  transition: 350ms;
+}
+.wrapper-search {
+  position: absolute;
+  color: #3a0dac;
+  top: 1%;
+  right: 10%;
+} 
+.wrapper-search:hover {
+  position: absolute;
+  background-color: #3a0dac;
+  top: 0%;
+  right: 0%;
+  width: 87%;
+  height: 9.5%;
+  animation: ease-in-out;
+} 
+.search-field-nav:hover .search-box-nav {
+  position: absolute;
+  left: 15%;
+}
+

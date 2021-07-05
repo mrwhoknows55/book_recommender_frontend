@@ -26,7 +26,7 @@ export default function useFetchBook(page, searchTerm) {
         setIsLoading(false);
       })
       .catch((e) => {
-        swal("Alert", e.response.statusText, "error");
+        swal("Alert", e, "error");
         setIsLoading(false);
       });
   }, [page]);
