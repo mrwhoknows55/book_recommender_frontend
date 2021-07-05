@@ -25,7 +25,7 @@
 .navbar-toggle .menu-bars {
   color: tomato;
 }
-.main_nav_text{
+.main_nav_text {
   list-style: none;
   margin-top: -19%;
   margin-left: -3%;
@@ -36,7 +36,7 @@
   font-weight: 2000;
   margin-left: -5%;
 }
-.main_nav_text h2{
+.main_nav_text h2 {
   color: #fff;
   font-size: 32px;
   margin-top: -5%;
@@ -59,7 +59,7 @@
 }
 .nav-text {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   padding: 8px 0px 8px 16px;
   list-style: none;
@@ -116,15 +116,16 @@ span {
 
 /* CSS for navbar wrapper ↓*/
 .wrapper-nav {
-  width: 125%;
+  width: 100%;
   display: flex;
+  margin-top: 1.5%;
 }
 
 /* CSS for navbar nav */
 .wrapper-nav .main-nav {
   position: relative;
   display: flex;
-  left: 20%;
+  left: 18%;
   max-width: calc(100% - 200px);
   margin-top: 1%;
   height: 5%;
@@ -133,12 +134,12 @@ span {
 }
 
 /* CSS  navbar */
-nav .content {
+.main-nav .content {
   display: flex;
   align-items: center;
   margin-left: 500px;
 }
-nav .content .links {
+.main-nav .content .links {
   display: flex;
   align-items: center;
 }
@@ -252,7 +253,7 @@ li .btn:hover {
   color: #aaa;
   transition: 0.5s;
 }
-.search-field input {
+.search-field .search-box {
   background: none;
   outline: none;
   border: none;
@@ -279,21 +280,21 @@ li .btn:hover {
     border-radius: 29px;
   } */
 /* Responsive code start */
-@media (max-width: 1920px){
-  .navbar{
+@media (max-width: 1920px) {
+  .navbar {
     display: none;
   }
 }
-@media (max-width: 1000px){
-  nav{
+@media (max-width: 1000px) {
+  nav {
     padding: 0 40px 0 50px;
   }
 }
 @media (max-width: 920px) {
-  .navbar{
+  .navbar {
     display: block;
   }
-  #click:checked ~ .menu-btn i:before{
+  #click:checked ~ .menu-btn i:before {
     content: "\f00d";
   }
   /*nav ul{
@@ -308,30 +309,30 @@ li .btn:hover {
     transition: all 0.3s ease;
     z-index: 1;
   }*/
-  #click:checked ~ ul{
+  #click:checked ~ ul {
     left: 0;
   }
-  nav ul li{
+  nav ul li {
     width: 100%;
     margin: 40px 0;
   }
-  nav ul li a{
+  nav ul li a {
     width: 100%;
     margin-left: -100%;
     display: block;
     font-size: 20px;
     transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-  #click:checked ~ ul li a{
+  #click:checked ~ ul li a {
     margin-left: 0px;
   }
   nav ul li a.active,
-  nav ul li a:hover{
+  nav ul li a:hover {
     background: none;
     color: cyan;
   }
 }
-.content{
+.content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -342,7 +343,7 @@ li .btn:hover {
   padding: 0 30px;
   color: #1b1b1b;
 }
-.content div{
+.content div {
   font-size: 40px;
   font-weight: 700;
 }
