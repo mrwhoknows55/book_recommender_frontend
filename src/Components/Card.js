@@ -32,14 +32,13 @@ const Card = (props) => {
           {
             <StarRatings
               rating={rating}
-              starRatedColor="yellow"
-              starEmptyColor="#C8D8EA"
+              starRatedColor="#EEC73C"
+              starEmptyColor="#949494"
               starDimension="20px"
               starSpacing="2px"
               className="star_rating"
             />
           }
-          {rating} / 5
         </div>
       </div>
     </div>

@@ -24,25 +24,41 @@ const Home = () => {
   // GETTING THE TOKEN FROM SESSION STORAGE
   const token = window.sessionStorage.getItem("token");
 
-  if (token) {
-    const instance = axios.create({
-      withCredentials: true,
-      baseURL: `https://api-book-recommender.herokuapp.com/api/`,
-      headers: { Authentication: token },
-    });
-    instance.get("user").then((resp) => setName(resp.data.name));
-  } else {
-    window.sessionStorage.removeItem("token");
-    history.replace("/signin");
-  }
+  useEffect(() => {
+    // if (token) {
+    //   instance
+    //     .get("user", {
+    //       headers: { Authentication: token },
+    //     })
+    //     .then((resp) => {
+    //       setName(resp.data.name);
+    //       console.log(resp.data.name);
+    //     });
+    // } else {
+    //   window.sessionStorage.removeItem("token");
+    //   history.replace("/signin");
+    // }
+    instance
+      .get("user", {
+        headers: { Authentication: token },
+      })
+      .then((resp) => {
+        setName(resp.data.name);
+        console.log(resp.data.name);
+      });
+  },[]);
   const logOut = (e) => {
     e.preventDefault();
 
     if (token) {
       instance
-        .post("logout", {
-          headers: { Authentication: token },
-        })
+        .post(
+          "logout",
+          {},
+          {
+            headers: { Authentication: token },
+          }
+        )
         .then((response) => {
           // TODO
           // if (response.data.success) {
