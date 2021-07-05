@@ -3,6 +3,7 @@
   background-color: #3a0dac;
   height: 80px;
   width: 100%;
+  /* margin-left:15% ; */
   display: grid;
   /*justify-content: center;*/
   align-items: center;
@@ -118,9 +119,8 @@ span {
 
 /* CSS for navbar wrapper ↓*/
 .wrapper-nav {
-  width: 100%;
-  display: flex;
-  margin-top: 1.5%;
+  width: 103%;
+  display: block;
 }
 
 /* CSS for navbar nav */
@@ -345,13 +345,13 @@ li .btn:hover {
   padding: 0 30px;
   color: #1b1b1b;
 }
-.content div {
+/* .content div {
   font-size: 40px;
   font-weight: 700;
-}
+} */
 .search-field-nav {
   position:absolute;
-  right: 2%;
+  right: 5%;
   top: 1%;
   /*max-width: 490px;*/
   width: 10px;
@@ -411,6 +411,7 @@ li .btn:hover {
   animation: ease-in-out;
   transition: 0.5s;
   opacity: 2;
+  z-index: 2;
 }
 .search-field-nav:hover .icon {
   position: absolute;
