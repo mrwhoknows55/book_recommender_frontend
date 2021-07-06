@@ -114,9 +114,7 @@ const Navbar = () => {
             <MenuIcon />
           </label>
           <div className="content">
-            <div className="logo">
-              <a href={"#"}></a>
-            </div>
+            
             <ul className="links">
               <li>
                 <div className="search-field">
