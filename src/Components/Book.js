@@ -6,6 +6,7 @@ import Header from "./Header";
 import Navbar from "./Navbar";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import StarRatings from "react-star-ratings";
 import swal from "sweetalert";
 function Book() {

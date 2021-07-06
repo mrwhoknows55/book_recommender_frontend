@@ -365,24 +365,40 @@ form.sign-in-form {
 }
 
 @media (max-width: 570px) {
-  form {
-    /* padding: 1rem 3rem; */
-    margin-right: 30%;
-    margin-top: 3%;
+   form {
+     /* padding: 1rem 3rem;  */
+    margin-right: 20%;
+    /* margin-bottom: -12%;  */
+  } 
+
+  .forms-container .sign-in-form {
+    margin-bottom: 1%;
+    margin-left: -4%;
   }
 
+  .forms-container .sign-up-form {
+    margin-top: -60%;
+    margin-left: -4%;
+  }
   .image {
     display: none;
   }
   .panel .content {
     padding: 0.5rem 1rem ;
   }
+  .left-panel  .content {
+    margin-top: -80%;
+    margin-left: 0%;
+  }
+  .right-panel  .content {
+    margin-top: 60%;
+    margin-left: -48%;
+  }
   .container {
     padding: 1.5rem; 
   }
-
   .container:before {
-    display: none;
+    /* display: none; */
     bottom: 72%;
     left: 50%;
   }
