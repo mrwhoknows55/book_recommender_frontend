@@ -7,6 +7,7 @@ body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
+
 /* CSS for wrapping all cards in one class called cards-wrap*/
 .cards-wrap {
   width: 100%;
@@ -15,8 +16,44 @@ body {
   flex-wrap: wrap;
   margin-top: 9%;
   padding: 3% 1%;
-  /* padding-right: 4%; */
 }
+
+/* CSS for back to top button */
+* {
+  scroll-behavior: smooth;
+}
+.uparrow {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  background: #12232e;
+  bottom: 20%;
+  left: 96%;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 22px;
+  z-index: 2;
+  cursor: pointer;
+}
+.uparrow :hover {
+  color: #fff;
+}
+.up-icon {
+  margin-top: 6%;
+  animation: scrollTop 0.5s alternate ease infinite;
+}
+@keyframes scrollTop {
+  from {
+    transform: translateY(2px);
+  }
+  to {
+    transform: translateY(-2px);
+  }
+}
+
 @media screen and (max-width: 500px) {
   body {
     overflow-x: hidden;

@@ -5,12 +5,16 @@ import { Signin } from "../Components/Signin";
 import Book from "../Components/Book";
 import Library from '../Components/Library'
 import "../CSS/App.css";
+import Search from "./Search";
 
 const App = () => {
   return (
     <Router>
       <div className="App">
         <Switch>
+          <Route path="/search">
+            <Search />
+          </Route>
           <Route path="/library">
             <Library />
           </Route>

@@ -1,0 +1,8 @@
+.book-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap:wrap;
+    margin-top: 5%;
+    padding: 0 0.5%;
+}

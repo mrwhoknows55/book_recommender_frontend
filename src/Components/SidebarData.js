@@ -1,6 +1,4 @@
 import React from "react";
-import MenuIcon from "@material-ui/icons/Menu";
-import CloseIcon from "@material-ui/icons/Close";
 import HomeIcon from "@material-ui/icons/Home";
 import LocalLibraryIcon from "@material-ui/icons/LocalLibrary";
 import LockIcon from "@material-ui/icons/Lock";
