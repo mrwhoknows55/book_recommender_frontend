@@ -139,7 +139,9 @@ span {
 .main-nav .content {
   display: flex;
   align-items: center;
-  margin-left: 450px;
+  margin-left: 500px;
+  margin-top: 2%;
+  z-index: 2;
 }
 .main-nav .content .links {
   display: flex;
@@ -177,6 +179,19 @@ span {
 .content .links li a:hover,
 .content .links li label:hover {
   background: #323c4e;
+}
+.content .links li ul  {
+  position: absolute;
+  top: 90%;
+  opacity: 0;
+  overflow: hidden;
+  color: aqua;
+  
+}
+.content .links li:hover >ul {
+  opacity: 1;
+  overflow: visible;
+  cursor: pointer;
 }
 .content .links .login {
   display: grid;

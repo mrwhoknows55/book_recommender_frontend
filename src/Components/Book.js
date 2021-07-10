@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router";
 import "../CSS/Book.css";
@@ -9,6 +10,7 @@ import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import StarRatings from "react-star-ratings";
 import swal from "sweetalert";
+import { DriveEta } from "@material-ui/icons";
 function Book() {
   // console.log(useLocation());
   // const book_id = useLocation().state.book_id;
@@ -74,7 +76,28 @@ function Book() {
       {/* NAVBAR COMPONENT ↓*/}
       {/* <Navbar /> */}
       {/* {book_id} */}
+      <div className="book-nav">
+        <li
+        className="goToHome"
+        onClick={(e) => {
+          history.push("/");
+        }}
+        >
+        {<ArrowBackIcon className="back-icon"/>}
+        </li>
 
+        <div className="book-nav-header">
+            <h1>BOOK</h1>
+            <h2>RECOMMENDER</h2>
+        </div>
+        <div className="book-links">
+          <h1>HOME</h1>
+        </div>
+        <li className="book-library">
+
+                <div className="libraryBtn">MY LIBRARY</div>
+              </li>
+      </div>
       <div className="book-details">
         {bookIndividual.map((item, index) => {
           return (
@@ -114,15 +137,7 @@ function Book() {
           );
         })}
       </div>
-      <button
-        className="goToHome"
-        onClick={(e) => {
-          history.push("/");
-        }}
-      >
-        {<ArrowBackIcon />}
-        <p>Back to Home</p>
-      </button>
+      
     </div>
   );
 }

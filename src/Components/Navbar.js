@@ -137,6 +137,12 @@ const Navbar = () => {
               </li>
               <li>
                 <Link to="/library">LIBRARY</Link>
+                <ul>
+                  <Link to="#"> SORT</Link>
+                </ul>
+                {/* <ul>
+                  <Link to="#">SORT</Link>
+                </ul> */}
               </li>
               <li
                 className="login"
