@@ -104,7 +104,7 @@ function Book() {
             <>
               <img src={item.image_url} alt="Book" className="book-image" />
 
-              <div className="book-details-other">
+              <div className="book-details-other" key={index}>
                 <h3 className="book-title">{item.title}.</h3>
                 <h4 className="book-author">
                   {item.authors} <small>(AUTHOR).</small>

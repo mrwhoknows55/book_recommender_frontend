@@ -4,6 +4,7 @@ import instance from "../axios";
 
 export default function useFetchBook(page, searchTerm) {
   const [books, setBooks] = useState([]);
+  const [searchBooks, setSearchBooks] = useState([]);
 
   const [nextPage, setNextPage] = useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -39,14 +40,14 @@ export default function useFetchBook(page, searchTerm) {
     setIsLoading(true);
     instance
       .get(`books?search=${searchTerm}`)
-      .then((response) => {
-        console.log(response.data.results);
-        setBooks(response.data.results);
+      .then((res) => {
+        console.log(res.data.results);
+        setSearchBooks([res.data.results]);
       })
       .catch((e) => {
         swal("Alert", e.response.statusText, "error");
         setIsLoading(false);
       });
   }, [searchTerm]);
-  return [books, nextPage, isLoading];
+  return [books, nextPage, isLoading, searchBooks];
 }
