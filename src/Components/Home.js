@@ -19,7 +19,8 @@ const Home = () => {
   const [page, setPage] = useState(1);
 
   //Custom Hook For Fetching Book & destructring using [] & fetching errors & fetching loader
-  const [books, nextPage, isLoading] = useFetchBook(page);
+  const [books, setBooks, nextPage, isLoading] = useFetchBook(page);
+  // const res = books ||
 
   // GETTING THE TOKEN FROM SESSION STORAGE
   const token = window.sessionStorage.getItem("token");

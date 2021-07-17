@@ -3,18 +3,18 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "../Components/Home";
 import { Signin } from "../Components/Signin";
 import Book from "../Components/Book";
-import Library from '../Components/Library'
+import Library from "../Components/Library";
 import "../CSS/App.css";
-import Search from "./Search";
+// import Search from "./Search";
 
 const App = () => {
   return (
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/search">
+          {/* <Route path="/search">
             <Search />
-          </Route>
+          </Route> */}
           <Route path="/library">
             <Library />
           </Route>

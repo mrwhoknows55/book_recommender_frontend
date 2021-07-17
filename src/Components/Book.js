@@ -7,7 +7,7 @@ import Header from "./Header";
 import Navbar from "./Navbar";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import StarRatings from "react-star-ratings";
 import swal from "sweetalert";
 import { DriveEta } from "@material-ui/icons";
@@ -78,25 +78,25 @@ function Book() {
       {/* {book_id} */}
       <div className="book-nav">
         <li
-        className="goToHome"
-        onClick={(e) => {
-          history.push("/");
-        }}
+          className="goToHome"
+          onClick={(e) => {
+            history.push("/");
+          }}
         >
-        {<ArrowBackIcon className="back-icon"/>}
+          {<ArrowBackIcon className="back-icon" />}
         </li>
 
         <div className="book-nav-header">
-            <h1>BOOK</h1>
-            <h2>RECOMMENDER</h2>
+          <h1>BOOK</h1>
+          <h2>RECOMMENDER</h2>
         </div>
         <div className="book-links">
-          <h1>HOME</h1>
-        </div>
-        <li className="book-library">
+          {/*  <h1>HOME</h1>*/}
 
-                <div className="libraryBtn">MY LIBRARY</div>
-              </li>
+          <Link to="/library" className="book-library">
+            LIBRARY
+          </Link>
+        </div>
       </div>
       <div className="book-details">
         {bookIndividual.map((item, index) => {
@@ -110,7 +110,6 @@ function Book() {
                   {item.authors} <small>(AUTHOR).</small>
                 </h4>
                 <p className="book-rating">
-                  <strong>Rated by:</strong> {item.ratings_count} readers.
                   <div className="star_rating">
                     <StarRatings
                       rating={item.avg_rating}
@@ -137,7 +136,6 @@ function Book() {
           );
         })}
       </div>
-      
     </div>
   );
 }
