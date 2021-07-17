@@ -10,7 +10,6 @@ import { useState } from "react";
 import useFetchBook from "../Utils/Hooks/useFetchBook";
 import useDebounce from "../Utils/Hooks/useDebounce";
 import { SidebarData } from "../Components/SidebarData";
-import useSearchBook from "../Utils/Hooks/useSearchBook";
 
 const Navbar = () => {
   const history = useHistory();
@@ -138,7 +137,7 @@ const Navbar = () => {
                 <Link to="/">HOME</Link>
               </li> */}
               <li>
-                <Link to="/recommendation">RECOMMENDATIONS</Link>
+                <Link to="/recommendations">RECOMMENDATIONS</Link>
               </li>
               <li>
                 <Link to="/library">LIBRARY</Link>

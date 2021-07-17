@@ -4,6 +4,7 @@ import Home from "../Components/Home";
 import { Signin } from "../Components/Signin";
 import Book from "../Components/Book";
 import Library from "../Components/Library";
+import Recommendations from '../Components/Recommendations'
 import "../CSS/App.css";
 // import Search from "./Search";
 
@@ -15,6 +16,9 @@ const App = () => {
           {/* <Route path="/search">
             <Search />
           </Route> */}
+          <Route path="/recommendations">
+            <Recommendations />
+          </Route>
           <Route path="/library">
             <Library />
           </Route>

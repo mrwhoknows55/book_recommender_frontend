@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import swal from "sweetalert";
 import instance from "../axios";
 
-export default function useFetchBook(page, searchTerm) {
+export default function useRecommendations(page, searchTerm) {
   const [books, setBooks] = useState([]);
-  const [searchBooks, setSearchBooks] = useState([]);
+  //   const [searchBooks, setSearchBooks] = useState([]);
 
   const [nextPage, setNextPage] = useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -31,23 +31,5 @@ export default function useFetchBook(page, searchTerm) {
         setIsLoading(false);
       });
   }, [page]);
-
-  useEffect(() => {
-    if (searchTerm === undefined) {
-      return;
-    }
-    console.log("SHe");
-    setIsLoading(true);
-    instance
-      .get(`books?search=${searchTerm}`)
-      .then((res) => {
-        console.log(res.data.results);
-        setSearchBooks([res.data.results]);
-      })
-      .catch((e) => {
-        swal("Alert", e.response.statusText, "error");
-        setIsLoading(false);
-      });
-  }, [searchTerm]);
-  return [books, nextPage, isLoading, searchBooks];
+  return [books, nextPage, isLoading];
 }
