@@ -9,7 +9,7 @@ const Recommendations = () => {
   // Setting default page as page 1 by using useState
   const [page, setPage] = useState(1);
 
-  const [books, setBooks, nextPage, isLoading] = useRecommendations(page);
+  const [books, nextPage, isLoading] = useRecommendations(page);
   //  BACK TO TOP BUTTON
   const [isVisible, setIsVisible] = useState(false);
 
@@ -36,6 +36,7 @@ const Recommendations = () => {
   }, []);
   return (
     <>
+      <h3>Recommendations For You</h3>
       {/* USED INFINTE SCROLL REACT COMPONENT FOR INFINTE SCROLLING & LOADING BOOKS */}
       <InfiniteScroll
         dataLength={books.length}
@@ -69,7 +70,7 @@ const Recommendations = () => {
       )}
 
       {/* LOADING STATE.... THEN IMPORT LOADING COMPONENT*/}
-      {isLoading && <Loading />}
+      {/* {isLoading && <Loading />} */}
     </>
   );
 };

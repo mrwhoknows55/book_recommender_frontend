@@ -3,6 +3,8 @@ import swal from "sweetalert";
 import instance from "../axios";
 
 export default function useRecommendations(page, searchTerm) {
+  const token = window.sessionStorage.getItem("token");
+
   const [books, setBooks] = useState([]);
   //   const [searchBooks, setSearchBooks] = useState([]);
 
@@ -17,7 +19,9 @@ export default function useRecommendations(page, searchTerm) {
     console.log("He");
     setIsLoading(true);
     instance
-      .get(`books?page=${page}&limit=21`)
+      .get(`recom/?page=${page}&limit=21`, {
+        headers: { Authentication: token },
+      })
       .then((response) => {
         console.log(response.data.results);
 

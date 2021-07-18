@@ -1,19 +1,15 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { useHistory, useLocation } from "react-router";
+import { useHistory } from "react-router";
 import "../CSS/Book.css";
 import instance from "../Utils/axios";
-import Header from "./Header";
-import Navbar from "./Navbar";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
-import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import StarRatings from "react-star-ratings";
+import ReadMoreReact from "read-more-react";
 import swal from "sweetalert";
-import { DriveEta } from "@material-ui/icons";
+
 function Book() {
-  // console.log(useLocation());
-  // const book_id = useLocation().state.book_id;
   // GETTING THE TOKEN FROM SESSION STORAGE
   const token = window.sessionStorage.getItem("token");
   const [bookIndividual, setBookIndividual] = useState([]);
@@ -70,12 +66,6 @@ function Book() {
   };
   return (
     <div className="book">
-      {/* HEADING (TITLE) COMPONENT ↓*/}
-      {/* <Header /> */}
-
-      {/* NAVBAR COMPONENT ↓*/}
-      {/* <Navbar /> */}
-      {/* {book_id} */}
       <div className="book-nav">
         <li
           className="goToHome"
@@ -109,6 +99,12 @@ function Book() {
                 <h4 className="book-author">
                   {item.authors} <small>(AUTHOR).</small>
                 </h4>
+                <p className="book-history">
+                  <p className="book-year">
+                    Publication Year : {item.original_publication_year}
+                  </p>
+                  <p className="book-year">Genre : {item.genre}</p>
+                </p>
                 <p className="book-rating">
                   <div className="star_rating">
                     <StarRatings
@@ -130,7 +126,15 @@ function Book() {
                   {<LibraryBooksIcon className="libraray-icon" />}
                   <p>Add to Library</p>
                 </button>
-                <p className="book-description">{item.description}</p>
+                <p className="book-description">
+                  <ReadMoreReact
+                    text={item.description}
+                    min="100"
+                    ideal="150"
+                    max="200"
+                    readMoreText="Read More..."
+                  />
+                </p>
               </div>
             </>
           );
