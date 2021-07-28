@@ -80,6 +80,7 @@ form.sign-in-form {
   grid-template-columns: 20% 80%;
   padding: 2% 5%;
   position: relative;
+  z-index: 10;
 }
 
 .input-field .icon {
@@ -173,24 +174,23 @@ form.sign-in-form {
   padding: 3rem 12% 2rem 17%;
 }
 
-.panel  .content {
+.panel .content {
   color: #fff;
   transition: transform 0.9s ease-in-out;
   transition-delay: 0.6s;
 }
-.left-panel  .content {
+.left-panel .content {
   color: rgb(240, 232, 232);
   margin-top: -20%;
   margin-left: -27%;
   /* padding: 10% 5% 15% -10%; */
 }
-.right-panel  .content {
+.right-panel .content {
   color: rgb(240, 232, 232);
   margin-top: -22%;
   margin-left: -20%;
   /* padding: 10% 5% 15% -10%; */
 }
-
 
 .panel h3 {
   font-weight: 600;
@@ -231,7 +231,7 @@ form.sign-in-form {
 
 .container.sign-up-mode .left-panel .image,
 .container.sign-up-mode .left-panel .content {
-  transform: translateX(-1700px);
+  transform: translateX(-1800px);
 }
 
 .container.sign-up-mode .signin-signup {
@@ -365,11 +365,11 @@ form.sign-in-form {
 }
 
 @media (max-width: 570px) {
-   form {
-     /* padding: 1rem 3rem;  */
+  form {
+    /* padding: 1rem 3rem;  */
     margin-right: 20%;
     /* margin-bottom: -12%;  */
-  } 
+  }
 
   .forms-container .sign-in-form {
     margin-bottom: 1%;
@@ -384,18 +384,18 @@ form.sign-in-form {
     display: none;
   }
   .panel .content {
-    padding: 0.5rem 1rem ;
+    padding: 0.5rem 1rem;
   }
-  .left-panel  .content {
+  .left-panel .content {
     margin-top: -80%;
     margin-left: 0%;
   }
-  .right-panel  .content {
+  .right-panel .content {
     margin-top: 60%;
     margin-left: -48%;
   }
   .container {
-    padding: 1.5rem; 
+    padding: 1.5rem;
   }
   .container:before {
     /* display: none; */
