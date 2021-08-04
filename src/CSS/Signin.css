@@ -174,20 +174,20 @@ form.sign-in-form {
   padding: 3rem 12% 2rem 17%;
 }
 
-.panel .content {
+.panel .signin-content {
   color: #fff;
   transition: transform 0.9s ease-in-out;
   transition-delay: 0.6s;
 }
-.left-panel .content {
+.left-panel .signin-content {
   color: rgb(240, 232, 232);
-  margin-top: -20%;
+  margin-top: -19%;
   margin-left: -27%;
   /* padding: 10% 5% 15% -10%; */
 }
-.right-panel .content {
+.right-panel .signin-content {
   color: rgb(240, 232, 232);
-  margin-top: -22%;
+  margin-top: -15%;
   margin-left: -20%;
   /* padding: 10% 5% 15% -10%; */
 }
@@ -218,7 +218,7 @@ form.sign-in-form {
 }
 
 .right-panel .image,
-.right-panel .content {
+.right-panel .signin-content {
   transform: translateX(800px);
 }
 
@@ -230,7 +230,7 @@ form.sign-in-form {
 }
 
 .container.sign-up-mode .left-panel .image,
-.container.sign-up-mode .left-panel .content {
+.container.sign-up-mode .left-panel .signin-content {
   transform: translateX(-1800px);
 }
 
@@ -249,7 +249,7 @@ form.sign-in-form {
 }
 
 .container.sign-up-mode .right-panel .image,
-.container.sign-up-mode .right-panel .content {
+.container.sign-up-mode .right-panel .signin-content {
   transform: translateX(0%);
 }
 
@@ -305,7 +305,7 @@ form.sign-in-form {
     transition-delay: 0.6s;
   }
 
-  .panel .content {
+  .panel .signin-content {
     padding-right: 15%;
     transition: transform 0.9s ease-in-out;
     transition-delay: 0.8s;
@@ -344,17 +344,17 @@ form.sign-in-form {
   }
 
   .container.sign-up-mode .left-panel .image,
-  .container.sign-up-mode .left-panel .content {
+  .container.sign-up-mode .left-panel .signin-content {
     transform: translateY(-300px);
   }
 
   .container.sign-up-mode .right-panel .image,
-  .container.sign-up-mode .right-panel .content {
+  .container.sign-up-mode .right-panel .signin-content {
     transform: translateY(0px);
   }
 
   .right-panel .image,
-  .right-panel .content {
+  .right-panel .signin-content {
     transform: translateY(300px);
   }
 
@@ -383,14 +383,14 @@ form.sign-in-form {
   .image {
     display: none;
   }
-  .panel .content {
+  .panel .signin-content {
     padding: 0.5rem 1rem;
   }
-  .left-panel .content {
+  .left-panel .signin-content {
     margin-top: -80%;
     margin-left: 0%;
   }
-  .right-panel .content {
+  .right-panel .signin-content {
     margin-top: 60%;
     margin-left: -48%;
   }

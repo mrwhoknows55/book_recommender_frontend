@@ -146,6 +146,7 @@ span {
 .main-nav .content .links {
   display: flex;
   align-items: center;
+  margin-left: 20%;
 }
 .content .logo a {
   color: #fff;
@@ -346,13 +347,9 @@ li .btn:hover {
 }
 .content {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
   z-index: -1;
   width: 100%;
-  padding: 0 30px;
   color: #1b1b1b;
 }
 /* .content div {

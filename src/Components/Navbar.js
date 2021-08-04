@@ -113,7 +113,7 @@ const Navbar = () => {
         {/*NAVBAR HAMBURGER CODE ENDS here */}
 
         {/* REGULAR NAVBAR CODE STARTS */}
-        <nav className="main-nav">
+        {/* <nav className="main-nav">
           <label for="show-menu" className="menu-icon">
             <MenuIcon />
           </label>
@@ -133,9 +133,6 @@ const Navbar = () => {
                 </div>
               </li>
 
-              {/* <li>
-                <Link to="/">HOME</Link>
-              </li> */}
               <li>
                 <Link to="/recommendations">RECOMMENDATIONS</Link>
               </li>
@@ -144,9 +141,6 @@ const Navbar = () => {
                 <ul>
                   <Link to="#"> SORT</Link>
                 </ul>
-                {/* <ul>
-                  <Link to="#">SORT</Link>
-                </ul> */}
               </li>
               <li
                 className="login"
@@ -160,7 +154,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-        </nav>
+        </nav> */}
       </div>
     </>
   );

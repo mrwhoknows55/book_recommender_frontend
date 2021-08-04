@@ -1,20 +1,17 @@
-import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router";
 import "../CSS/Book.css";
 import instance from "../Utils/axios";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import StarRatings from "react-star-ratings";
 import ReadMoreReact from "read-more-react";
 import swal from "sweetalert";
+import { Subnav } from "./Subnav";
 
 function Book() {
   // GETTING THE TOKEN FROM SESSION STORAGE
   const token = window.sessionStorage.getItem("token");
   const [bookIndividual, setBookIndividual] = useState([]);
   const book_id = sessionStorage.getItem("bookId");
-  const history = useHistory();
   useEffect(() => {
     instance
       .get(`books/${book_id}/`)
@@ -33,7 +30,7 @@ function Book() {
 
       instance
         .post(
-          `library/${book_id}`,
+          `library/${book_id}/`,
           {},
           {
             headers: { Authentication: token },
@@ -66,28 +63,8 @@ function Book() {
   };
   return (
     <div className="book">
-      <div className="book-nav">
-        <li
-          className="goToHome"
-          onClick={(e) => {
-            history.push("/");
-          }}
-        >
-          {<ArrowBackIcon className="back-icon" />}
-        </li>
+      <Subnav />
 
-        <div className="book-nav-header">
-          <h1>BOOK</h1>
-          <h2>RECOMMENDER</h2>
-        </div>
-        <div className="book-links">
-          {/*  <h1>HOME</h1>*/}
-
-          <Link to="/library" className="book-library">
-            LIBRARY
-          </Link>
-        </div>
-      </div>
       <div className="book-details">
         {bookIndividual.map((item, index) => {
           return (
@@ -117,15 +94,6 @@ function Book() {
                   </div>
                 </p>
 
-                <button
-                  className="goToLibrary"
-                  onClick={(e) => {
-                    postBook(e);
-                  }}
-                >
-                  {<LibraryBooksIcon className="libraray-icon" />}
-                  <p>Add to Library</p>
-                </button>
                 <p className="book-description">
                   <ReadMoreReact
                     text={item.description}
@@ -135,6 +103,15 @@ function Book() {
                     readMoreText="Read More..."
                   />
                 </p>
+                <button
+                  className="goToLibrary"
+                  onClick={(e) => {
+                    postBook(e);
+                  }}
+                >
+                  {<LibraryBooksIcon className="libraray-icon" />}
+                  <p>Add to Library</p>
+                </button>
               </div>
             </>
           );

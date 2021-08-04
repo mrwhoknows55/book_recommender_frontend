@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import instance from "../Utils/axios";
 import Card from "./Card";
 import "../CSS/Library.css";
+import { Subnav } from "./Subnav";
 
 const Library = () => {
   const token = window.sessionStorage.getItem("token");
@@ -23,7 +24,8 @@ const Library = () => {
   return (
     <div className="library">
       {/* <Navbar /> */}
-      <h3 className="heading-books">Your Books</h3>
+      <Subnav />
+      <h3 className="heading">Your Books</h3>
       <div className="book-wrap">
         {library.map((item, index) => {
           return (

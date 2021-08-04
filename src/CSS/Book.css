@@ -126,38 +126,7 @@
   /* height:10%;
   font-size: 2rem;  */
 }
-.book-nav {
-  position: absolute;
-  top: 1%;
-  height: 2.5rem;
-  width: 95%;
-  background-color: #41519a;
-  border-bottom-right-radius: 15pt 15pt;
-  border-top-right-radius: 15pt 15pt;
-  border-bottom-left-radius: 15pt 15pt;
-  border-top-left-radius: 15pt 15pt;
-}
-.book-nav-header {
-  margin-top: 0%;
-}
-.book-nav-header h1 {
-  margin-top: -4.653%;
-  margin-left: -70%;
-  color: rgba(200, 216, 234, 1);
-  font-size: 3.7rem;
-  font-weight: 1000;
-  font-style: italic;
-  letter-spacing: 9px;
-}
-.book-nav-header h2 {
-  margin-top: -4.83%;
-  color: rgba(200, 216, 234, 1);
-  margin-left: -39%;
-  font-size: 1.5rem;
-  font-weight: 1000;
-  font-style: italic;
-  letter-spacing: 1px;
-}
+
 /* .book-links {
   width: 50%;
   z-index: 1;

@@ -1,3 +1,8 @@
+import MenuIcon from "@material-ui/icons/Menu";
+import SearchIcon from "@material-ui/icons/Search";
+import LockIcon from "@material-ui/icons/Lock";
+import { Link } from "react-router-dom";
+
 import "../CSS/Home.css";
 import instance from "../Utils/axios";
 import React, { useEffect, useState } from "react";
@@ -10,6 +15,7 @@ import Navbar from "./Navbar";
 import Card from "./Card";
 import InfiniteScroll from "react-infinite-scroll-component";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
+import useDebounce from "../Utils/Hooks/useDebounce";
 
 const Home = () => {
   const [name, setName] = useState("");
@@ -17,13 +23,26 @@ const Home = () => {
 
   // Setting default page as page 1 by using useState
   const [page, setPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState();
 
   //Custom Hook For Fetching Book & destructring using [] & fetching errors & fetching loader
-  const [books, nextPage, isLoading] = useFetchBook(page);
+  const [books, nextPage, isLoading] = useFetchBook(page, searchTerm);
+
   // const res = books ||
 
   // GETTING THE TOKEN FROM SESSION STORAGE
   const token = window.sessionStorage.getItem("token");
+  const debounce = useDebounce();
+
+  const handleSearch = (e) => {
+    const text = e.target.value;
+    debounce(() => setSearchTerm(text));
+  };
+  // LOGOUT
+  const logOut = (e) => {
+    history.replace("/signin");
+    window.sessionStorage.removeItem("token");
+  };
 
   useEffect(() => {
     if (token) {
@@ -45,7 +64,7 @@ const Home = () => {
   //  BACK TO TOP BUTTON
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when page is scorlled upto given distance
+  // Show button when page is scrolled upto given distance
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {
       setIsVisible(true);
@@ -69,8 +88,6 @@ const Home = () => {
 
   return (
     <>
-      {/* {scrollPostion} */}
-
       <div className="home">
         {/* BACKGROUND DESIGN  COMPONENT ↓*/}
         <Background />
@@ -79,7 +96,49 @@ const Home = () => {
         <Header />
 
         {/* NAVBAR COMPONENT ↓*/}
-        <Navbar />
+        {/* <Navbar /> */}
+        <nav className="main-nav">
+          <label for="show-menu" className="menu-icon">
+            <MenuIcon />
+          </label>
+          <div className="content">
+            <ul className="links">
+              <li>
+                <div className="search-field">
+                  <SearchIcon className="icon" />
+                  <input
+                    type="search"
+                    className="search-box"
+                    placeholder="SEARCH"
+                    onChange={(e) => {
+                      handleSearch(e);
+                    }}
+                  />
+                </div>
+              </li>
+
+              <li>
+                <Link to="/recommendations">RECOMMENDATIONS</Link>
+              </li>
+              <li>
+                <Link to="/library">LIBRARY</Link>
+                <ul>
+                  <Link to="#"> SORT</Link>
+                </ul>
+              </li>
+              <li
+                className="login"
+                onClick={(e) => {
+                  logOut(e);
+                }}
+              >
+                <LockIcon className="loginIcon" />
+
+                <button className="loginBtn">Logout</button>
+              </li>
+            </ul>
+          </div>
+        </nav>
 
         {/* USED INFINTE SCROLL REACT COMPONENT FOR INFINTE SCROLLING & LOADING BOOKS */}
         <InfiniteScroll

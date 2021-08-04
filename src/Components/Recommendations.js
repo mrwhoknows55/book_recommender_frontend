@@ -4,6 +4,8 @@ import useRecommendations from "../Utils/Hooks/useRecommendations";
 import Card from "./Card";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import Loading from "./Loading";
+import "../CSS/Recommendations.css";
+import { Subnav } from "./Subnav";
 
 const Recommendations = () => {
   // Setting default page as page 1 by using useState
@@ -36,7 +38,8 @@ const Recommendations = () => {
   }, []);
   return (
     <>
-      <h3>Recommendations For You</h3>
+      <Subnav />
+      <h3 className="heading">Recommendations</h3>
       {/* USED INFINTE SCROLL REACT COMPONENT FOR INFINTE SCROLLING & LOADING BOOKS */}
       <InfiniteScroll
         dataLength={books.length}
