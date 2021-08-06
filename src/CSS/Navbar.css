@@ -1,0 +1,490 @@
+/* CSS FOR NAVBAR MENU BAR */
+.navbar {
+  background-color: #3a0dac;
+  height: 80px;
+  width: 100%;
+  /* margin-left:15% ; */
+  display: grid;
+  /*justify-content: center;*/
+  align-items: center;
+  /* display: none; */
+  opacity: 2;
+}
+.menu-bars {
+  margin-left: -24rem;
+  font-size: 2.6rem;
+  size: 20px;
+  background: none;
+  color: rgb(177, 14, 14);
+}
+.menu-bars1 {
+  margin-left: -20rem;
+  font-size: 2.8rem;
+  size: 20px;
+  background: none;
+  color: rgb(243, 235, 235);
+}
+.navbar-toggle .menu-bars {
+  color: tomato;
+}
+.main_nav_text {
+  list-style: none;
+  margin-top: -22%;
+  margin-left: -3%;
+}
+.main_nav_text h1 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 4000;
+  margin-left: -5%;
+}
+.main_nav_text h2 {
+  color: #fff;
+  font-size: 32px;
+  margin-top: -5%;
+}
+
+.nav-menu {
+  background-color: #09032b;
+  width: 390px;
+  height: 812px;
+  display: flex;
+  justify-content: start;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+  z-index: 2;
+}
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+.nav-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  height: 40px;
+  font-size: 50px;
+}
+.nav-text a {
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 25px;
+  font-weight: 400;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 45px;
+  /*padding: 1px 500px;*/
+  border-radius: 4px;
+}
+.nav-text a:hover {
+  background-color: #1a83ff;
+}
+.nav-menu-items {
+  width: 100%;
+}
+.navbar-toggle {
+  width: 50%;
+  height: 50px;
+  font-size: 20px;
+  display: flex;
+  justify-content: start;
+  /*align-items: center;*/
+  margin-left: 198%;
+  margin-top: -1%;
+}
+.navbar-name {
+  list-style: none;
+  color: #f0f0f0;
+}
+.navbar-name h1 {
+  margin-top: -15%;
+  margin-left: -15%;
+  font-size: 55px;
+  font-style: bold;
+}
+.navbar-name h2 {
+  margin-left: -12%;
+  font-size: 40px;
+  margin-top: 0%;
+}
+span {
+  margin-left: 10%;
+}
+
+/* CSS for navbar wrapper ↓*/
+.wrapper-nav {
+  width: 103%;
+  display: block;
+  margin-top: 2.5%;
+}
+
+/* CSS for navbar nav */
+.wrapper-nav .main-nav {
+  position: relative;
+  display: flex;
+  left: 18%;
+  max-width: calc(100% - 200px);
+  height: 5%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* CSS  navbar */
+.main-nav .content {
+  display: flex;
+  align-items: center;
+  margin-left: 300px;
+  margin-top: 1%;
+  z-index: 2;
+}
+.main-nav .content .links {
+  display: flex;
+  align-items: center;
+  margin-left: 20%;
+}
+.content .logo a {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+}
+.content .links li {
+  list-style: none;
+  line-height: 70px;
+  font-weight: 700;
+  margin-left: 4.5%;
+  font-family: "Poppins";
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.content .links li a,
+.content .links li label {
+  color: #c8d8ea;
+  font-size: 23px;
+  font-weight: 700;
+  padding: 7%;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.content .links li label {
+  display: none;
+}
+.content .links li a:hover,
+.content .links li label:hover {
+  background: #323c4e;
+}
+.content .links li ul {
+  position: absolute;
+  top: 90%;
+  opacity: 0;
+  overflow: hidden;
+  color: aqua;
+}
+.content .links li:hover > ul {
+  opacity: 1;
+  overflow: visible;
+  cursor: pointer;
+}
+.content .links .login {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 10% 90%;
+  background-color: #c8d8ea;
+  border-radius: 16px;
+  width: 360px;
+  border: none;
+  color: #41519a;
+  font-size: 25px;
+  outline: none;
+  height: 40px;
+}
+.login .loginIcon {
+  width: 20px;
+  height: 20px;
+  margin-left: 50%;
+}
+
+.login .loginBtn {
+  width: 100%;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.5s;
+  font-style: bold;
+  line-height: 30px;
+  letter-spacing: 0.03em;
+  color: #41519a;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 22px;
+}
+li .btn:hover {
+  background-color: #41519a;
+  color: #fff;
+}
+
+.menu-icon {
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 70px;
+  width: 70px;
+  text-align: center;
+}
+.menu-icon {
+  display: none;
+}
+
+/* CSS for navbar contents */
+.search-field {
+  max-width: 490px;
+  width: 78%;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  margin-left: 30%;
+  height: 60px;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 2%;
+  position: relative;
+  align-items: center;
+}
+
+.search-field .icon {
+  text-align: center;
+  line-height: 55px;
+  color: #aaa;
+  transition: 0.5s;
+}
+.search-field .search-box {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.search-field input::placeholder {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.155em;
+  color: rgba(18, 35, 46, 0.37);
+}
+/* .search-box {
+    margin-top: 20px;
+    height: 40px;
+    width: 400px;
+    background-color: #fff;
+    border-radius: 29px;
+  } */
+/* Responsive code start */
+@media (max-width: 1920px) {
+  .navbar {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  .navbar {
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  /*nav ul{
+    position: fixed;
+    top: 80px;
+    left: -120%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }*/
+  #click:checked ~ ul {
+    left: 0;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: cyan;
+  }
+}
+.content {
+  position: absolute;
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  color: #1b1b1b;
+}
+/* .content div {
+  font-size: 40px;
+  font-weight: 700;
+} */
+.search-field-nav {
+  position: absolute;
+  right: 5%;
+  top: 1%;
+  /*max-width: 490px;*/
+  width: 10px;
+  /*background-color: #120680;*/
+  margin: 10px 0;
+  height: 40px;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 10% 90%;
+  padding: 2% 5%;
+  align-items: center;
+}
+
+.search-field-nav .icon {
+  position: absolute;
+  left: 20%;
+  top: 15%;
+  text-align: center;
+  line-height: 10px;
+  color: #aaa;
+  transition: 0.5s;
+  size: 20px;
+}
+.search-field-nav .cancel-icon {
+  display: none;
+}
+.search-field-nav input {
+  display: none;
+  position: absolute;
+  right: 1%;
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-size: 0.9rem;
+  color: rgb(202, 12, 12);
+  font-weight: 500;
+}
+
+.search-field-nav .search-box-nav .placeholder {
+  display: none;
+  position: absolute;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.155em;
+  color: rgba(231, 182, 22, 0.37);
+  left: 10%;
+  transition-delay: 2s;
+}
+.search-field-nav:hover {
+  width: 95%;
+  top: 10%;
+  background-color: #fff;
+  cursor: pointer;
+  animation: ease-in-out;
+  transition: 0.5s;
+  opacity: 2;
+  z-index: 2;
+}
+.search-field-nav:hover .icon {
+  position: absolute;
+  top: 20%;
+  left: 4%;
+  text-align: center;
+  line-height: 10px;
+  color: #aaa;
+  transition: 1s;
+}
+.search-field-nav:hover input {
+  position: absolute;
+  right: 1%;
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-size: 0.9rem;
+  color: rgb(12, 11, 11);
+  font-weight: 500;
+  display: block;
+  transition: 2s;
+}
+.search-field-nav:hover .search-box-nav .placeholder {
+  display: none;
+  position: absolute;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.155em;
+  color: rgba(221, 218, 12, 0.37);
+  left: 10%;
+  transition-delay: 2s;
+}
+.search-field-nav:hover .cancel-icon {
+  display: block;
+  position: absolute;
+  top: -80%;
+  right: -44%;
+  text-align: center;
+  line-height: 10px;
+  color: rgb(235, 13, 13);
+  transition: ease-in-out;
+  transition-delay: 2s;
+}
+.nav-search.active {
+  left: 0;
+  transition: 350ms;
+}
+.wrapper-search {
+  position: absolute;
+  color: #3a0dac;
+  top: 1%;
+  right: 10%;
+}
+.wrapper-search:hover {
+  position: absolute;
+  background-color: #3a0dac;
+  top: 0%;
+  right: 0%;
+  width: 87%;
+  height: 9.5%;
+  animation: ease-in-out;
+}
+.search-field-nav:hover .search-box-nav {
+  position: absolute;
+  left: 15%;
+}
