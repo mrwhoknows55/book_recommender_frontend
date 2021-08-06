@@ -9,7 +9,7 @@ export default function useDebounce() {
     clearTimeout(typingTimeout);
     const timeout = setTimeout(() => {
       func();
-      history.push("/search");
+      // history.push("/search");
     }, wait);
     setTypingTimeout(timeout);
   };

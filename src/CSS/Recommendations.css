@@ -1,0 +1,11 @@
+.heading {
+  margin-top: 5%;
+  font-size: 25px;
+  color: rgba(200, 216, 234, 1);
+  text-transform: uppercase;
+  background-color: #41519a;
+  width: 17%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 19px;
+}

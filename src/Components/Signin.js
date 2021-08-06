@@ -115,7 +115,7 @@ function Signin() {
 
         <div className="panels-container">
           <div className="panel left-panel">
-            <div className="content">
+            <div className="signin-content">
               <h3>New here ?</h3>
               <p>Create a account with us and take benifits of our system.</p>
               <button
@@ -129,7 +129,7 @@ function Signin() {
             <img src={boyVector} alt="Boy" className="image" />
           </div>
           <div className="panel right-panel">
-            <div className="content">
+            <div className="signin-content">
               <h3>One of us ?</h3>
               <p>Then what you are doing here . . . . . .</p>
               <button

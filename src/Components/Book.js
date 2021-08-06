@@ -1,24 +1,17 @@
-import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { useHistory, useLocation } from "react-router";
 import "../CSS/Book.css";
 import instance from "../Utils/axios";
-import Header from "./Header";
-import Navbar from "./Navbar";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import StarRatings from "react-star-ratings";
+import ReadMoreReact from "read-more-react";
 import swal from "sweetalert";
-import { DriveEta } from "@material-ui/icons";
+import { Subnav } from "./Subnav";
+
 function Book() {
-  // console.log(useLocation());
-  // const book_id = useLocation().state.book_id;
   // GETTING THE TOKEN FROM SESSION STORAGE
   const token = window.sessionStorage.getItem("token");
   const [bookIndividual, setBookIndividual] = useState([]);
   const book_id = sessionStorage.getItem("bookId");
-  const history = useHistory();
   useEffect(() => {
     instance
       .get(`books/${book_id}/`)
@@ -37,7 +30,7 @@ function Book() {
 
       instance
         .post(
-          `library/${book_id}`,
+          `library/${book_id}/`,
           {},
           {
             headers: { Authentication: token },
@@ -70,34 +63,8 @@ function Book() {
   };
   return (
     <div className="book">
-      {/* HEADING (TITLE) COMPONENT ↓*/}
-      {/* <Header /> */}
+      <Subnav />
 
-      {/* NAVBAR COMPONENT ↓*/}
-      {/* <Navbar /> */}
-      {/* {book_id} */}
-      <div className="book-nav">
-        <li
-        className="goToHome"
-        onClick={(e) => {
-          history.push("/");
-        }}
-        >
-        {<ArrowBackIcon className="back-icon"/>}
-        </li>
-
-        <div className="book-nav-header">
-            <h1>BOOK</h1>
-            <h2>RECOMMENDER</h2>
-        </div>
-        <div className="book-links">
-          <h1>HOME</h1>
-        </div>
-        <li className="book-library">
-
-                <div className="libraryBtn">MY LIBRARY</div>
-              </li>
-      </div>
       <div className="book-details">
         {bookIndividual.map((item, index) => {
           return (
@@ -109,8 +76,13 @@ function Book() {
                 <h4 className="book-author">
                   {item.authors} <small>(AUTHOR).</small>
                 </h4>
+                <p className="book-history">
+                  <p className="book-year">
+                    Publication Year : {item.original_publication_year}
+                  </p>
+                  <p className="book-year">Genre : {item.genre}</p>
+                </p>
                 <p className="book-rating">
-                  <strong>Rated by:</strong> {item.ratings_count} readers.
                   <div className="star_rating">
                     <StarRatings
                       rating={item.avg_rating}
@@ -122,6 +94,15 @@ function Book() {
                   </div>
                 </p>
 
+                <p className="book-description">
+                  <ReadMoreReact
+                    text={item.description}
+                    min="100"
+                    ideal="150"
+                    max="200"
+                    readMoreText="Read More..."
+                  />
+                </p>
                 <button
                   className="goToLibrary"
                   onClick={(e) => {
@@ -131,13 +112,11 @@ function Book() {
                   {<LibraryBooksIcon className="libraray-icon" />}
                   <p>Add to Library</p>
                 </button>
-                <p className="book-description">{item.description}</p>
               </div>
             </>
           );
         })}
       </div>
-      
     </div>
   );
 }

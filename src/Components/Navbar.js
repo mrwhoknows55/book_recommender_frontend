@@ -12,8 +12,8 @@ import useDebounce from "../Utils/Hooks/useDebounce";
 import { SidebarData } from "../Components/SidebarData";
 
 const Navbar = () => {
-  const [searchTerm, setSearchTerm] = useState("");
   const history = useHistory();
+  const [searchTerm, setSearchTerm] = useState();
 
   /* Debounce is a custom hook for setting timeout in search field after key pressed */
   const debounce = useDebounce();
@@ -25,6 +25,7 @@ const Navbar = () => {
 
   // PASSING THE SEARCH TERM TO FETCH BOOK HOOK
   useFetchBook(1, searchTerm);
+  // useSearchBook(searchTerm);
 
   /* SIDEBAR STATE INITIALLY FALSE*/
   const [sidebar, setSidebar] = useState(false);
@@ -112,7 +113,7 @@ const Navbar = () => {
         {/*NAVBAR HAMBURGER CODE ENDS here */}
 
         {/* REGULAR NAVBAR CODE STARTS */}
-        <nav className="main-nav">
+        {/* <nav className="main-nav">
           <label for="show-menu" className="menu-icon">
             <MenuIcon />
           </label>
@@ -133,16 +134,13 @@ const Navbar = () => {
               </li>
 
               <li>
-                <Link to="/">HOME</Link>
+                <Link to="/recommendations">RECOMMENDATIONS</Link>
               </li>
               <li>
                 <Link to="/library">LIBRARY</Link>
                 <ul>
                   <Link to="#"> SORT</Link>
                 </ul>
-                {/* <ul>
-                  <Link to="#">SORT</Link>
-                </ul> */}
               </li>
               <li
                 className="login"
@@ -156,7 +154,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-        </nav>
+        </nav> */}
       </div>
     </>
   );
