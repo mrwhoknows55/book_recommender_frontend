@@ -4,11 +4,15 @@ import instance from "../Utils/axios";
 import Card from "./Card";
 import "../CSS/Library.css";
 import { Subnav } from "./Subnav";
+import Loading from "./Loading";
 
 const Library = () => {
   const token = window.sessionStorage.getItem("token");
   const [library, setLibrary] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
+    setIsLoading(true);
     instance
       .get(`library/`, {
         headers: { Authentication: token },
@@ -16,16 +20,17 @@ const Library = () => {
       .then((response) => {
         console.log(response.data.results);
         setLibrary([...library, ...response.data.results]);
+        setIsLoading(false);
       })
       .catch((e) => {
         console.log(e);
+        setIsLoading(false);
       });
   }, []);
   return (
     <div className="library">
       {/* <Navbar /> */}
       <Subnav />
-      <h3 className="heading">Your Books</h3>
       <div className="book-wrap">
         {library.map((item, index) => {
           return (
@@ -40,6 +45,8 @@ const Library = () => {
           );
         })}
       </div>
+      {/* LOADING STATE.... THEN IMPORT LOADING COMPONENT*/}
+      {isLoading && <Loading />}
     </div>
   );
 };

@@ -39,7 +39,7 @@ const Recommendations = () => {
   return (
     <>
       <Subnav />
-      <h3 className="heading">Recommendations</h3>
+
       {/* USED INFINTE SCROLL REACT COMPONENT FOR INFINTE SCROLLING & LOADING BOOKS */}
       <InfiniteScroll
         dataLength={books.length}
@@ -73,7 +73,7 @@ const Recommendations = () => {
       )}
 
       {/* LOADING STATE.... THEN IMPORT LOADING COMPONENT*/}
-      {/* {isLoading && <Loading />} */}
+      {isLoading && <Loading />}
     </>
   );
 };

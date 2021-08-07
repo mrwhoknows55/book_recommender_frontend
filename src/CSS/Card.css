@@ -13,6 +13,8 @@
   /* max-height: 600px;*/
   height: 95%;
   width: 80%;
+  box-shadow: 13px 10px rgba(32, 54, 65, 0.3);
+  border-color: rgba(32, 54, 71, 1);
 }
 
 /* CSS for book image ↓ */

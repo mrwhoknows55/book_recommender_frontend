@@ -8,7 +8,6 @@ export default function useFetchBook(page, searchTerm) {
 
   const [nextPage, setNextPage] = useState();
   const [isLoading, setIsLoading] = useState(false);
-  
 
   // RANDOM LOADING
   useEffect(() => {
