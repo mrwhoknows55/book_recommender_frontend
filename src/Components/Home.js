@@ -122,9 +122,17 @@ const Home = () => {
               </li>
               <li>
                 <Link to="/library">LIBRARY</Link>
-                <ul>
-                  <Link to="#"> SORT</Link>
-                </ul>
+              </li>
+              <li>
+                <Link to="/library">FILTER</Link>
+               <div className="sort-filter">
+                 <li>Title(A-Z)</li>
+                 <li>Title(Z-A)</li>
+                 <li>Rating </li>
+                 <li>Auther A-Z</li>
+                 <li>Auther Z-A</li>
+               </div>
+          
               </li>
               <li
                 className="login"
