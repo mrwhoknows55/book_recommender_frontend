@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import swal from "sweetalert";
 import instance from "../axios";
 
-export default function useFetchBook(page, searchTerm) {
+export default function useFetchBook(page, searchTerm, filterSelect) {
   const [books, setBooks] = useState([]);
   const [searchBooks, setSearchBooks] = useState([]);
 
@@ -65,5 +65,48 @@ export default function useFetchBook(page, searchTerm) {
         setIsLoading(false);
       });
   }, [searchTerm]);
+
+  useEffect(() => {
+    let url = `books?page=${page}&limit=21`;
+    switch (filterSelect) {
+      case 0:
+        url = `books?ordering=title&page=${page}&limit=21`;
+        break;
+      case 1:
+        url = `books?ordering=-title&page=${page}&limit=21`;
+        break;
+      case 2:
+        url = `books?ordering=rating&page=${page}&limit=21`;
+        break;
+      case 3:
+        url = `books?ordering=-rating&page=${page}&limit=21`;
+        break;
+      case 4:
+        url = `books?ordering=author&page=${page}&limit=21`;
+        break;
+      case 5:
+        url = `books?ordering=-author&page=${page}&limit=21`;
+        break;
+      default:
+        url = `books?page=${page}&limit=21`;
+        break;
+    }
+    console.log(url);
+    instance
+      .get(url)
+      .then((res) => {
+        console.log(res.data.results);
+        if (page === 1) setBooks([...res.data.results]);
+        else {
+          setBooks([...books, ...res.data.results]);
+        }
+        setIsLoading(false);
+      })
+      .catch((e) => {
+        swal("Alert", e.response.statusText, "error");
+        setIsLoading(false);
+      });
+  }, [filterSelect]);
+
   return [books, nextPage, isLoading];
 }

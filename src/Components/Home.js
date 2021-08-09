@@ -24,9 +24,14 @@ const Home = () => {
   // Setting default page as page 1 by using useState
   const [page, setPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState();
+  const [filterSelect, setFilterSelect] = useState(-1);
 
   //Custom Hook For Fetching Book & destructring using [] & fetching errors & fetching loader
-  const [books, nextPage, isLoading] = useFetchBook(page, searchTerm);
+  const [books, nextPage, isLoading] = useFetchBook(
+    page,
+    searchTerm,
+    filterSelect
+  );
 
   // const res = books ||
 
@@ -85,6 +90,18 @@ const Home = () => {
   useEffect(() => {
     window.addEventListener("scroll", toggleVisibility);
   }, []);
+  const filters = [
+    "Title(A-Z)",
+    "Title(Z-A)",
+    "Rating Asc",
+    "Rating Dsc",
+    "Auther A-Z",
+    "Auther Z-A",
+  ];
+  const selectFilter = (choice) => {
+    setPage(1);
+    setFilterSelect(choice);
+  };
 
   return (
     <>
@@ -124,15 +141,21 @@ const Home = () => {
                 <Link to="/library">LIBRARY</Link>
               </li>
               <li>
-                <Link to="/library">FILTER</Link>
-               <div className="sort-filter">
-                 <li>Title(A-Z)</li>
-                 <li>Title(Z-A)</li>
-                 <li>Rating </li>
-                 <li>Auther A-Z</li>
-                 <li>Auther Z-A</li>
-               </div>
-          
+                <Link>FILTER</Link>
+                <div className="sort-filter">
+                  {filters.map((filter, index) => {
+                    return (
+                      <button
+                        key={index}
+                        onClick={(e) => {
+                          selectFilter(index);
+                        }}
+                      >
+                        {filter}
+                      </button>
+                    );
+                  })}
+                </div>
               </li>
               <li
                 className="login"
