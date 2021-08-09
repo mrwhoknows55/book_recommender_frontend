@@ -1,7 +1,7 @@
 import { useHistory } from "react-router";
 import "../CSS/Card.css";
 import StarRatings from "react-star-ratings";
-const Card = (props) => {
+const LibraryCard = (props) => {
   const { title, image, author, rating, id } = props;
   const history = useHistory();
   const viewBook = (e, id) => {
@@ -39,4 +39,4 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+export default LibraryCard;
