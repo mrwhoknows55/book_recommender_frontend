@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import instance from "../Utils/axios";
-import Card from "./Card";
+import LibraryCard from "./LibraryCard";
 import "../CSS/Library.css";
 import { Subnav } from "./Subnav";
 
@@ -29,7 +29,7 @@ const Library = () => {
       <div className="book-wrap">
         {library.map((item, index) => {
           return (
-            <Card
+            <LibraryCard
               key={index}
               image={item.image_url}
               author={item.authors}

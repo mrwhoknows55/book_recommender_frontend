@@ -1,32 +1,30 @@
 import { useHistory } from "react-router";
 import "../CSS/Card.css";
 import StarRatings from "react-star-ratings";
-import BookmarkIcon from '@material-ui/icons/Bookmark';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import instance from "../Utils/axios";
 import swal from "sweetalert";
-const Card = (props) => {
+const LibraryCard = (props) => {
   const { title, image, author, rating, id } = props;
   const history = useHistory();
   const token = window.sessionStorage.getItem("token");
   const book_id = sessionStorage.getItem("bookId");
   const viewBook = (e, id) => {
     e.preventDefault();
-    
     sessionStorage.setItem("bookId", id);
     history.push("./book");
   };
-  const postBook = (e) => {
+  const removeBook = (e) => {
     e.preventDefault();
-   
-    console.log({ token });
+    console.log( `lib ${token}` );
     if (token) {
       // useEffect(() => {
 
       instance
-        .post(
-          `library/${id}/`,
-          {},
+        .delete(
+          `library/${book_id}/`,
+         
           {
             headers: { Authentication: token },
           }
@@ -58,7 +56,6 @@ const Card = (props) => {
   }
   return (
     <div className="card-item">
-      
       <div
         className="card-inner"
         // onClick={(e) => {
@@ -67,19 +64,20 @@ const Card = (props) => {
       >
         <img src={image} alt="Book" />
         <div className="add-go">
-       < BookmarkIcon className="book-icon" onClick={(e) => {
-        postBook(e);
+       <DeleteForeverIcon className="book-icon" onClick={(e) => {
+       removeBook(e);
         }} >
         
-         </ BookmarkIcon>
-         <div className="icon-content">Add to library</div>
+         </DeleteForeverIcon>
+         <div className="icon-content">Remove book</div>
        <MenuBookIcon className="menu-book" onClick={(e) => {
-          viewBook(e , id);
+          viewBook(e, id);
         }}>
       
        </MenuBookIcon>
        <div className="icon-content">View Book</div>
       </div>
+        
         <div className="roll-name">
           <p>{author}</p>
           <p>{title}</p>
@@ -101,4 +99,4 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+export default LibraryCard;

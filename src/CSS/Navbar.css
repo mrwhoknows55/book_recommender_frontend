@@ -138,13 +138,14 @@ span {
 /* CSS  navbar */
 .main-nav .content {
   display: flex;
-  align-items: center;
-  margin-left: 300px;
+  /* align-items: center; */
+  margin-left: 290px;
   margin-top: 1%;
   z-index: 2;
 }
 .main-nav .content .links {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   margin-left: 20%;
 }
@@ -154,10 +155,13 @@ span {
   font-weight: 600;
 }
 .content .links li {
+  align-items: initial;
+  position: relative;
   list-style: none;
   line-height: 70px;
   font-weight: 700;
   margin-left: 4.5%;
+  margin-top: -1%;
   font-family: "Poppins";
   font-weight: bold;
   letter-spacing: 0.05em;
@@ -168,7 +172,7 @@ span {
   color: #c8d8ea;
   font-size: 23px;
   font-weight: 700;
-  padding: 7%;
+  padding: 13%;
   border-radius: 16px;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -180,17 +184,33 @@ span {
 .content .links li label:hover {
   background: #323c4e;
 }
-.content .links li ul {
+.sort-filter {
   position: absolute;
-  top: 90%;
-  opacity: 0;
-  overflow: hidden;
-  color: aqua;
+  margin-top: 22%;
+  margin-left: -30%;
+  display: none;
+  
+  padding-top:-20% ;
+  width: 125%;
+  padding: 10px -05px;
+  font-size: 1rem;
+  /* overflow-y: auto; */
+  line-height: -10%;
+  /* transition: cubic-bezier(0.455, 0.03, 0.515, 0.955); */
 }
-.content .links li:hover > ul {
-  opacity: 1;
-  overflow: visible;
-  cursor: pointer;
+.sort-filter li {
+  margin: -10px, 20px;
+}
+
+.content .links li:hover > .sort-filter {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  display: block;
+  background-color:  #323c4e;
+  color: #fff;
+  transition-delay: 5s ;
+  border-radius: 03px;
 }
 .content .links .login {
   display: grid;
