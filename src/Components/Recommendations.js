@@ -46,7 +46,7 @@ const Recommendations = () => {
         next={() => {
           setPage(page + 1);
         }}
-        hasMore={true}
+        hasMore={nextPage && nextPage !== null}
       >
         {/* BOOKS CARD COMPONENT ↓*/}
         <div className="cards-wrap">

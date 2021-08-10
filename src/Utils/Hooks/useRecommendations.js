@@ -2,21 +2,15 @@ import { useEffect, useState } from "react";
 import swal from "sweetalert";
 import instance from "../axios";
 
-export default function useRecommendations(page, searchTerm) {
+export default function useRecommendations(page) {
   const token = window.sessionStorage.getItem("token");
 
   const [books, setBooks] = useState([]);
-  //   const [searchBooks, setSearchBooks] = useState([]);
 
   const [nextPage, setNextPage] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
-  // RANDOM LOADING
   useEffect(() => {
-    if (searchTerm) {
-      return;
-    }
-    console.log("He");
     setIsLoading(true);
     instance
       .get(`recom/?page=${page}&limit=21`, {
@@ -27,7 +21,11 @@ export default function useRecommendations(page, searchTerm) {
 
         // ↓ In setBooks destructure the previous data which we have and add new data to the array ↓
         setNextPage(response.data.next);
-        setBooks([...books, ...response.data.results]);
+        if (page === 1) {
+          setBooks([...response.data.results]);
+        } else {
+          setBooks([...books, ...response.data.results]);
+        }
         setIsLoading(false);
       })
       .catch((e) => {
