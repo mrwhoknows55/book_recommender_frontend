@@ -5,11 +5,14 @@ import LibraryCard from "./LibraryCard";
 import "../CSS/Library.css";
 import { Subnav } from "./Subnav";
 import Loading from "./Loading";
+import emptyError from "../Images/empty_error.png";
+import { useHistory } from "react-router";
 
 const Library = () => {
   const token = window.sessionStorage.getItem("token");
   const [library, setLibrary] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
     setIsLoading(true);
@@ -32,6 +35,16 @@ const Library = () => {
       {/* <Navbar /> */}
       <Subnav />
       <div className="book-wrap">
+        {(!library || (library.length === 0 && !isLoading)) && (
+          <img
+            src={emptyError}
+            alt="Error"
+            className="errorImage"
+            onClick={() => {
+              history.push("/");
+            }}
+          />
+        )}
         {library.map((item, index) => {
           return (
             <LibraryCard
