@@ -205,7 +205,7 @@ function Signup() {
         .then(function (response) {
           if (response.status === 200) {
             window.sessionStorage.setItem("token", response.data.token);
-            history.replace("/questions");
+            history.replace("/");
           }
         })
         .catch((error) => {
