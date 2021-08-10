@@ -24,9 +24,14 @@ const Home = () => {
   // Setting default page as page 1 by using useState
   const [page, setPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState();
+  const [filterSelect, setFilterSelect] = useState(-1);
 
   //Custom Hook For Fetching Book & destructring using [] & fetching errors & fetching loader
-  const [books, nextPage, isLoading] = useFetchBook(page, searchTerm);
+  const [books, nextPage, isLoading] = useFetchBook(
+    page,
+    searchTerm,
+    filterSelect
+  );
 
   // const res = books ||
 
@@ -36,7 +41,10 @@ const Home = () => {
 
   const handleSearch = (e) => {
     const text = e.target.value;
-    debounce(() => setSearchTerm(text));
+    debounce(() => {
+      setPage(1);
+      setSearchTerm(text);
+    });
   };
   // LOGOUT
   const logOut = (e) => {
@@ -86,6 +94,46 @@ const Home = () => {
     window.addEventListener("scroll", toggleVisibility);
   }, []);
 
+  const filters = [
+    "Title Asc",
+    "Title Dsc",
+    "Rating Asc",
+    "Rating Dsc",
+    "Auther Asc",
+    "Auther Dsc",
+  ];
+
+  const selectFilter = (choice) => {
+    setPage(1);
+    // toggle functionality
+    if (filterSelect === choice) {
+      // disabled
+      for (let i = 0; i <= 5; i++) {
+        let button = document.getElementById(`button_${i}`);
+        button.style.backgroundColor = "#c8d8ea";
+        button.style.color = "#000";
+      }
+      setFilterSelect(-1);
+    } else {
+      // enabled
+
+      for (let i = 0; i <= 5; i++) {
+        let button = document.getElementById(`button_${i}`);
+        if (i === choice) {
+          // enable selected
+          button.style.backgroundColor = "#41519a";
+          button.style.color = "#c8d8ea";
+          button.style.fontWeight = "700";
+        } else {
+          // disable remaining
+          button.style.backgroundColor = "#c8d8ea";
+          button.style.color = "#000";
+        }
+      }
+      setFilterSelect(choice);
+    }
+  };
+
   return (
     <>
       <div className="home">
@@ -122,9 +170,25 @@ const Home = () => {
               </li>
               <li>
                 <Link to="/library">LIBRARY</Link>
-                <ul>
-                  <Link to="#"> SORT</Link>
-                </ul>
+              </li>
+              <li>
+                <Link>FILTER</Link>
+                <div className="sort-filter">
+                  {filters.map((filter, index) => {
+                    return (
+                      <button
+                        id={`button_${index}`}
+                        key={index}
+                        onClick={(e) => {
+                          selectFilter(index);
+                        }}
+                        className="filterBtn"
+                      >
+                        {filter}
+                      </button>
+                    );
+                  })}
+                </div>
               </li>
               <li
                 className="login"
@@ -146,7 +210,7 @@ const Home = () => {
           next={() => {
             setPage(page + 1);
           }}
-          hasMore={true}
+          hasMore={nextPage && nextPage !== null}
         >
           {/* BOOKS CARD COMPONENT ↓*/}
           <div className="cards-wrap">

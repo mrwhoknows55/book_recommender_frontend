@@ -4,15 +4,63 @@
   margin: 0 1%;
   padding: 2% 0; /*15px 10px*/
 }
+/* .card-item :hover {
+  display: none;
+} */
+.add-go {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: #fff; */
+  height: 5rem;
+  width: 4.5rem;
+  /* background-color: #fff;
+  z-index: -1; */
+  opacity: 0;
+  margin-top: -55%;
+}
 
+.add-go .book-icon {
+  font-size: 3rem;
+  position: relative;
+  margin-top: -230%;
+  margin-left: 60%;
+  overflow: hidden;
+  color: #c8d8ea;
+}
+.add-go .book-icon:hover {
+  color: lightskyblue;
+}
+.add-go .menu-book {
+  font-size: 3rem;
+  position: relative;
+  margin-left: 60%;
+  /* margin-top: -270%; */
+  color: #c8d8ea;
+  margin-top: 30%;
+}
+.add-go .menu-book:hover {
+  color: lightskyblue;
+}
+
+.icon-content {
+  color: #fff;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-left: 20%;
+  width: 150%;
+  text-transform: uppercase;
+}
 /* CSS for card content i.e image, author, title ↓*/
 .card-inner {
   background: rgba(32, 54, 71, 1);
   border-radius: 7%;
-  /*min-width: 225px;*/
-  /* max-height: 600px;*/
+  /* min-width: 225px; */
+  /* max-height: 600px; */
   height: 95%;
   width: 80%;
+  box-shadow: 13px 10px rgba(32, 54, 65, 0.3);
+  border-color: rgba(32, 54, 71, 1);
 }
 
 /* CSS for book image ↓ */
@@ -24,12 +72,18 @@
   max-height: 68%;
   margin-bottom: 3%;
 }
+.card-inner:hover img {
+  background-color: #fff;
+  opacity: 0.2;
+}
+.card-item :hover .add-go {
+  opacity: 1;
+}
 
 /* CSS for class roll-name ↓*/
 .card-inner .roll-name {
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 0.7em;
   color: #fff;
   line-height: 100%;
   /* height: 100%; */
@@ -45,6 +99,13 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
+}
+.roll-name #author {
+  font-size: 0.6em;
+}
+.roll-name #title {
+  font-size: 0.85em;
+  font-weight: 700;
 }
 
 /* CSS for rating ↓ */

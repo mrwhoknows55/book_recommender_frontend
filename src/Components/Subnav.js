@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { Link } from "react-router-dom";
-import '../CSS/Subnav.css';
+import "../CSS/Subnav.css";
 
 export const Subnav = () => {
   const history = useHistory();
@@ -27,6 +27,9 @@ export const Subnav = () => {
 
         <Link to="/library" className="book-library">
           LIBRARY
+        </Link>
+        <Link to="/recommendations" className="book-recomm">
+          RECOMMENDATIONS
         </Link>
       </div>
     </div>

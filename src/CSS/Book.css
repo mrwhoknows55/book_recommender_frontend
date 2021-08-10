@@ -143,7 +143,7 @@
 } */
 .book-library {
   margin-top: -2.6%;
-  margin-left: 87%;
+  margin-left: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,6 +151,24 @@
   border-radius: 21px;
   text-decoration: none;
   width: 150px;
+  border: none;
+  color: #41519a;
+  /* padding: 0 0.3%; */
+  font-size: 25px;
+  font-weight: 600;
+  outline: none;
+  height: 2.1rem;
+}
+.book-recomm {
+  margin-top: -2.6%;
+  margin-left: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c8d8ea;
+  border-radius: 21px;
+  text-decoration: none;
+  width: 300px;
   border: none;
   color: #41519a;
   /* padding: 0 0.3%; */

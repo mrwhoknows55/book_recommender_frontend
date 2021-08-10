@@ -6,6 +6,8 @@ import Book from "../Components/Book";
 import Library from "../Components/Library";
 import Recommendations from "../Components/Recommendations";
 import "../CSS/App.css";
+import { Questions } from "./Questions";
+import Questions2 from "./Questions2";
 // import Search from "./Search";
 
 const App = () => {
@@ -13,9 +15,12 @@ const App = () => {
     <Router>
       <div className="App">
         <Switch>
-          {/* <Route path="/search">
-            <Search />
-          </Route> */}
+          <Route path="/questions2">
+            <Questions2 />
+          </Route>
+          <Route path="/questions">
+            <Questions />
+          </Route>
           <Route path="/recommendations">
             <Recommendations />
           </Route>

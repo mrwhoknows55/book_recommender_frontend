@@ -1,85 +1,62 @@
 import { useHistory } from "react-router";
 import "../CSS/Card.css";
 import StarRatings from "react-star-ratings";
-import BookmarkIcon from "@material-ui/icons/Bookmark";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
 import instance from "../Utils/axios";
 import swal from "sweetalert";
-import Loading from "./Loading";
 import { useState } from "react";
-const Card = (props) => {
+import Loading from "./Loading";
+
+const LibraryCard = (props) => {
+  const [isLoading, setIsLoading] = useState(false);
   const { title, image, author, rating, id } = props;
   const history = useHistory();
   const token = window.sessionStorage.getItem("token");
-  const book_id = sessionStorage.getItem("bookId");
-  const [isLoading, setIsLoading] = useState(false);
 
   const viewBook = (e, id) => {
     e.preventDefault();
-
     sessionStorage.setItem("bookId", id);
     history.push("./book");
   };
-  const postBook = (e) => {
+  const removeBook = (e) => {
     e.preventDefault();
-
-    console.log({ token });
     setIsLoading(true);
     if (token) {
-      // useEffect(() => {
-
       instance
-        .post(
-          `library/${id}/`,
-          {},
-          {
-            headers: { Authentication: token },
-          }
-        )
+        .delete(`library/${id}/`, {
+          headers: { Authentication: token },
+        })
         .then((response) => {
-          setIsLoading(false);
           console.log(response.data);
+          setIsLoading(false);
           swal({
             title: "Done",
             text: response.data.message,
             icon: "success",
             button: "OK",
           });
+          window.location.reload();
         })
         .catch((e) => {
+          console.log(e);
           setIsLoading(false);
-          console.log(e);
+          window.location.reload();
         });
-      instance
-        .get(`library/`, {
-          headers: { Authentication: token },
-        })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-      // }, []);
     }
   };
   return (
     <div className="card-item">
-      <div
-        className="card-inner"
-        // onClick={(e) => {
-        //   viewBook(e, id);
-        // }}
-      >
+      <div className="card-inner">
         <img src={image} alt="Book" />
         <div className="add-go">
-          <BookmarkIcon
+          <DeleteForeverIcon
             className="book-icon"
             onClick={(e) => {
-              postBook(e);
+              removeBook(e);
             }}
-          ></BookmarkIcon>
-          <div className="icon-content">Add to library</div>
+          ></DeleteForeverIcon>
+          <div className="icon-content">Remove book</div>
           <MenuBookIcon
             className="menu-book"
             onClick={(e) => {
@@ -88,6 +65,7 @@ const Card = (props) => {
           ></MenuBookIcon>
           <div className="icon-content">View Book</div>
         </div>
+
         <div className="roll-name">
           <p id="author">{author}</p>
           <p id="title">{title}</p>
@@ -111,4 +89,4 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+export default LibraryCard;
