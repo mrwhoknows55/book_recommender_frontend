@@ -46,12 +46,13 @@
   color: #c8d8ea;
 }
 .options {
-  width: 100%;
+  /* width: 600px; */
   height: 200px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   background: #333a80;
+  margin-top: 30px;
 }
 .buttons {
   display: flex;

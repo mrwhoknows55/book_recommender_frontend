@@ -67,8 +67,8 @@ const LibraryCard = (props) => {
         </div>
 
         <div className="roll-name">
-          <p>{author}</p>
-          <p>{title}</p>
+          <p id="author">{author}</p>
+          <p id="title">{title}</p>
         </div>
         <div className="rating">
           {

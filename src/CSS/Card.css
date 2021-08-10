@@ -17,7 +17,7 @@
   /* background-color: #fff;
   z-index: -1; */
   opacity: 0;
-  margin-top: -50%;
+  margin-top: -55%;
 }
 
 .add-go .book-icon {
@@ -84,7 +84,6 @@
 .card-inner .roll-name {
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 0.7em;
   color: #fff;
   line-height: 100%;
   /* height: 100%; */
@@ -100,6 +99,13 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
+}
+.roll-name #author {
+  font-size: 0.6em;
+}
+.roll-name #title {
+  font-size: 0.85em;
+  font-weight: 700;
 }
 
 /* CSS for rating ↓ */

@@ -7,19 +7,13 @@ import instance from "../Utils/axios";
 import swal from "sweetalert";
 import Loading from "./Loading";
 import { useState } from "react";
-const Card = (props) => {
+const QuesCard = (props) => {
   const { title, image, author, rating, id } = props;
   const history = useHistory();
   const token = window.sessionStorage.getItem("token");
   const book_id = sessionStorage.getItem("bookId");
   const [isLoading, setIsLoading] = useState(false);
 
-  const viewBook = (e, id) => {
-    e.preventDefault();
-
-    sessionStorage.setItem("bookId", id);
-    history.push("./book");
-  };
   const postBook = (e) => {
     e.preventDefault();
 
@@ -65,12 +59,7 @@ const Card = (props) => {
   };
   return (
     <div className="card-item">
-      <div
-        className="card-inner"
-        // onClick={(e) => {
-        //   viewBook(e, id);
-        // }}
-      >
+      <div className="card-inner">
         <img src={image} alt="Book" />
         <div className="add-go">
           <BookmarkIcon
@@ -80,13 +69,6 @@ const Card = (props) => {
             }}
           ></BookmarkIcon>
           <div className="icon-content">Add to library</div>
-          <MenuBookIcon
-            className="menu-book"
-            onClick={(e) => {
-              viewBook(e, id);
-            }}
-          ></MenuBookIcon>
-          <div className="icon-content">View Book</div>
         </div>
         <div className="roll-name">
           <p id="author">{author}</p>
@@ -111,4 +93,4 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+export default QuesCard;
