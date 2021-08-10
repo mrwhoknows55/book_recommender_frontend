@@ -139,7 +139,7 @@ span {
 .main-nav .content {
   display: flex;
   /* align-items: center; */
-  margin-left: 290px;
+  margin-left: 250px;
   margin-top: 1%;
   z-index: 2;
 }
@@ -172,8 +172,6 @@ span {
   color: #c8d8ea;
   font-size: 23px;
   font-weight: 700;
-  padding: 13%;
-  border-radius: 16px;
   transition: all 0.3s ease;
   text-decoration: none;
 }
@@ -189,27 +187,25 @@ span {
   margin-top: 22%;
   margin-left: -30%;
   display: none;
-  
-  padding-top:-20% ;
-  width: 125%;
-  padding: 10px -05px;
+  width: 170%;
   font-size: 1rem;
-  /* overflow-y: auto; */
-  line-height: -10%;
-  /* transition: cubic-bezier(0.455, 0.03, 0.515, 0.955); */
 }
-.sort-filter li {
-  margin: -10px, 20px;
+.sort-filter button {
+  width: 95%;
+  border-radius: 8px;
+  padding: 6% 1%;
+  font-size: x-small;
+  background-color: #c8d8ea;
+  cursor: pointer;
 }
-
 .content .links li:hover > .sort-filter {
   position: absolute;
   top: 50%;
   left: 30%;
   display: block;
-  background-color:  #323c4e;
+  background-color: #323c4e;
   color: #fff;
-  transition-delay: 5s ;
+  transition-delay: 5s;
   border-radius: 03px;
 }
 .content .links .login {
@@ -218,12 +214,14 @@ span {
   grid-template-columns: 10% 90%;
   background-color: #c8d8ea;
   border-radius: 16px;
+  padding-right: 1%;
   width: 360px;
   border: none;
   color: #41519a;
   font-size: 25px;
   outline: none;
   height: 40px;
+  margin-left: 3%;
 }
 .login .loginIcon {
   width: 20px;
@@ -232,7 +230,7 @@ span {
 }
 
 .login .loginBtn {
-  width: 100%;
+  width: 120%;
   border: none;
   text-transform: uppercase;
   font-weight: 800;
@@ -246,6 +244,7 @@ span {
   outline: none;
   border: none;
   font-size: 22px;
+  margin-left: -3%;
 }
 li .btn:hover {
   background-color: #41519a;
@@ -267,10 +266,10 @@ li .btn:hover {
 /* CSS for navbar contents */
 .search-field {
   max-width: 490px;
-  width: 78%;
+  width: 70%;
   background-color: #f0f0f0;
   margin: 10px 0;
-  margin-left: 30%;
+  margin-left: 40%;
   height: 60px;
   border-radius: 55px;
   display: grid;

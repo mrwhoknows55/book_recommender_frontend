@@ -150,6 +150,7 @@ const Home = () => {
                         onClick={(e) => {
                           selectFilter(index);
                         }}
+                        className="filterBtn"
                       >
                         {filter}
                       </button>

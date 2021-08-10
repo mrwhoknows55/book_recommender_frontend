@@ -45,6 +45,8 @@ body {
   margin-top: 6%;
   animation: scrollTop 0.5s alternate ease infinite;
 }
+
+
 @keyframes scrollTop {
   from {
     transform: translateY(2px);
