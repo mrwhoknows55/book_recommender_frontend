@@ -6,8 +6,11 @@ import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import Loading from "./Loading";
 import "../CSS/Recommendations.css";
 import { Subnav } from "./Subnav";
+import { useHistory } from "react-router";
+import emptyError from "../Images/empty_error.png";
 
 const Recommendations = () => {
+  const history = useHistory();
   // Setting default page as page 1 by using useState
   const [page, setPage] = useState(1);
 
@@ -39,29 +42,41 @@ const Recommendations = () => {
   return (
     <>
       <Subnav />
-      <h3 className="heading">Recommendations</h3>
+
       {/* USED INFINTE SCROLL REACT COMPONENT FOR INFINTE SCROLLING & LOADING BOOKS */}
       <InfiniteScroll
         dataLength={books.length}
         next={() => {
           setPage(page + 1);
         }}
-        hasMore={true}
+        hasMore={nextPage && nextPage !== null}
       >
-        {/* BOOKS CARD COMPONENT ↓*/}
-        <div className="cards-wrap">
-          {books.map((book, index) => {
-            return (
-              <Card
-                key={index}
-                image={book.image_url}
-                author={book.authors}
-                title={book.title}
-                rating={book.avg_rating}
-                id={book.book_id}
-              />
-            );
-          })}
+        <div>
+          {(!books || (books.length === 0 && !isLoading)) && (
+            <img
+              src={emptyError}
+              alt="Error"
+              className="errorImage"
+              onClick={() => {
+                history.push("/");
+              }}
+            />
+          )}
+          {/* BOOKS CARD COMPONENT ↓*/}
+          <div className="cards-wrap">
+            {books.map((book, index) => {
+              return (
+                <Card
+                  key={index}
+                  image={book.image_url}
+                  author={book.authors}
+                  title={book.title}
+                  rating={book.avg_rating}
+                  id={book.book_id}
+                />
+              );
+            })}
+          </div>
         </div>
       </InfiniteScroll>
 
@@ -73,7 +88,7 @@ const Recommendations = () => {
       )}
 
       {/* LOADING STATE.... THEN IMPORT LOADING COMPONENT*/}
-      {/* {isLoading && <Loading />} */}
+      {isLoading && <Loading />}
     </>
   );
 };

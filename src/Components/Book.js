@@ -6,25 +6,34 @@ import StarRatings from "react-star-ratings";
 import ReadMoreReact from "read-more-react";
 import swal from "sweetalert";
 import { Subnav } from "./Subnav";
+import Loading from "./Loading";
 
 function Book() {
   // GETTING THE TOKEN FROM SESSION STORAGE
   const token = window.sessionStorage.getItem("token");
   const [bookIndividual, setBookIndividual] = useState([]);
   const book_id = sessionStorage.getItem("bookId");
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
+    setIsLoading(true);
     instance
       .get(`books/${book_id}/`)
       .then((response) => {
         console.log(response.data);
         setBookIndividual([response.data]);
+        setIsLoading(false);
       })
-      .catch((e) => console.log(e));
+      .catch((e) => {
+        console.log(e);
+        setIsLoading(false);
+      });
   }, []);
 
   const postBook = (e) => {
     e.preventDefault();
     console.log({ token });
+    setIsLoading(true);
     if (token) {
       // useEffect(() => {
 
@@ -38,6 +47,7 @@ function Book() {
         )
         .then((response) => {
           console.log(response.data);
+          setIsLoading(false);
           swal({
             title: "Done",
             text: response.data.message,
@@ -46,18 +56,19 @@ function Book() {
           });
         })
         .catch((e) => {
+          setIsLoading(false);
           console.log(e);
         });
-      instance
-        .get(`library/`, {
-          headers: { Authentication: token },
-        })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+      // instance
+      //   .get(`library/`, {
+      //     headers: { Authentication: token },
+      //   })
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
+      //   .catch((e) => {
+      //     console.log(e);
+      //   });
       // }, []);
     }
   };
@@ -117,6 +128,8 @@ function Book() {
           );
         })}
       </div>
+      {/* LOADING STATE.... THEN IMPORT LOADING COMPONENT*/}
+      {isLoading && <Loading />}
     </div>
   );
 }

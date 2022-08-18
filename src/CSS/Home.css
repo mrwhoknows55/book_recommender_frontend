@@ -28,8 +28,8 @@ body {
   height: 50px;
   border-radius: 16px;
   background: #12232e;
-  bottom: 20%;
-  left: 96%;
+  bottom: 5%;
+  left: 96.5%;
   text-decoration: none;
   text-align: center;
   line-height: 50px;
@@ -45,6 +45,8 @@ body {
   margin-top: 6%;
   animation: scrollTop 0.5s alternate ease infinite;
 }
+
+
 @keyframes scrollTop {
   from {
     transform: translateY(2px);
