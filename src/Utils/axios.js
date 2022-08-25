@@ -1,8 +1,8 @@
 import axios from "axios";
-
+require('dotenv').config();
 const instance = axios.create({
   withCredentials: true,
-  baseURL: `https://books-api.mrwhoknows.com/api/`,
+  baseURL: process.env.API_BASE_URL
 });
 
 export default instance;

@@ -9,6 +9,7 @@ import "../CSS/App.css";
 import { Questions } from "./Questions";
 import Questions2 from "./Questions2";
 // import Search from "./Search";
+require('dotenv').config();
 
 const App = () => {
   return (

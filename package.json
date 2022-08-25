@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.8.3",
     "@yana4961/react-multiselect": "^2.2.2",
     "axios": "^0.21.1",
+    "dotenv": "^16.0.1",
     "multiselect-react-dropdown": "^2.0.5",
     "nvm": "^0.0.4",
     "react": "^17.0.2",
